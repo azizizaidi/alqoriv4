@@ -1,0 +1,103 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+/* Add vertical lines to tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    border-right: 1px solid #ddd; /* Vertical line color */
+    padding: 8px;
+    white-space: nowrap; /* Prevent line breaks for minimal width */
+}
+
+table th:last-child, table td:last-child {
+    border-right: none; /* Remove border from the last column */
+}
+
+table th {
+    border-bottom: 2px solid #ddd; /* Optional: Add bottom border to headers */
+    text-align: center; /* Center align headers */
+}
+
+table th:first-child, table td:first-child {
+    width: 8px; /* Set the width of the first column */
+}
+
+/* Optional: Additional styles for the first column */
+table th:first-child {
+    background-color: #f8f8f8; /* Light background for the header */
+}
+
+table td:first-child {
+    background-color: #fafafa; /* Light background for the first column cells */
+}
+
+
+
+body {
+    @apply !bg-primary-50 dark:!bg-gray-950;
+}
+
+.fi-sidebar {
+    @apply p-4 !important;
+}
+
+.fi-sidebar-header {
+    @apply bg-transparent ring-0 shadow-none !important;
+}
+
+.fi-sidebar-item-active a {
+    @apply bg-primary-600 dark:bg-primary-950/70 hover:bg-primary-600 dark:hover:bg-primary-950/70 text-white dark:text-white;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-label {
+    @apply text-white dark:text-white;
+}
+
+.fi-sidebar-item-active svg {
+    @apply text-white dark:text-white;
+}
+
+.fi-sidebar-item:not(.fi-sidebar-item-active) a {
+    @apply dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-800/50 dark:hover:text-white;
+}
+
+.fi-sidebar-item:not(.fi-sidebar-item-active):hover a svg {
+    @apply dark:text-white;
+}
+
+.fi-main-ctn {
+    @apply !h-screen;
+}
+
+.fi-topbar {
+    @apply relative;
+}
+
+.fi-topbar nav {
+    @apply bg-primary-50 dark:bg-gray-950 ring-0 shadow-none;
+}
+
+.fi-main {
+    @apply bg-white dark:bg-gray-800 ltr:rounded-tl-3xl rtl:rounded-tr-3xl shadow !max-w-full !overflow-y-auto flex-grow;
+}
+
+.fi-wi-stats-overview-stat {
+    @apply shadow-none ring-2 ring-primary-50 dark:!ring-gray-950 border border-primary-100 dark:border-gray-900;
+}
+
+.fi-section {
+    @apply ring-2 ring-primary-50 dark:!ring-gray-950 border border-primary-100 dark:border-gray-900 shadow-none;
+}
+
+.fi-fo-tabs {
+    @apply ring-2 ring-primary-50 dark:!ring-gray-950 border border-primary-100 dark:border-gray-900 shadow-none;
+}
+
+.fi-ta-ctn {
+    @apply ring-2 ring-primary-50 dark:!ring-gray-950 border border-primary-100 dark:border-gray-900 shadow-none;
+}
