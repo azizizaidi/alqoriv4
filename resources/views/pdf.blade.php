@@ -427,6 +427,7 @@
             @endif
         </table>
         <table>
+            
             <tr class="total">
                 <td colspan="4" class="right-align" style="padding: 12px; line-height: 20px;"><strong>Jumlah Yuran:</strong></td>
                 <td class="highlight-total right-align" style="padding: 12px; line-height: 20px;">RM{{ $total }}</td>
