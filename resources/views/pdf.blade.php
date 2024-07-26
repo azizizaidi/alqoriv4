@@ -421,13 +421,17 @@
                     @php
                         $subtotal_2 = $rate_2 * ($value->total_hour_2 ?? 0);
                         $total += $subtotal_2;
+                        $finalhour = $value->total_hour + $value->total_hour_2;
                     @endphp
                     <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal_2 }}</td>
                 </tr>
             @endif
         </table>
         <table>
-            
+        <tr class="total">
+                <td colspan="4" class="right-align" style="padding: 12px; line-height: 20px;"><strong>Jumlah:</strong></td>
+                <td class="highlight-total right-align" style="padding: 12px; line-height: 20px;">{{ $finalhour }} jam</td>
+            </tr>
             <tr class="total">
                 <td colspan="4" class="right-align" style="padding: 12px; line-height: 20px;"><strong>Jumlah Yuran:</strong></td>
                 <td class="highlight-total right-align" style="padding: 12px; line-height: 20px;">RM{{ $total }}</td>
