@@ -86,43 +86,43 @@ ALQORI ACADEMY ENTERPRISE <br>
 
 
             <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider  ">  {{ $value->class_name->name ?? '' }}</td>
-            <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  " >{{ $value->total_hour ?? '' }}</td>
+            <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  " >{{ $finalhour ?? '' }}</td>
              <!-- rate-->
 
             @if($value->class_name->name  == "Fardhu Ain Online AQ")
 
-            @if( $value->total_hour <= 7.9)
+            @if( $finalhour <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM40</td>
-            @elseif( $value->total_hour <= 11.9)
+            @elseif( $finalhour <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM35</td>
-            @elseif( $value->total_hour >= 12)
+            @elseif( $finalhour >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM30</td>
             @endif
 
             @elseif($value->class_name->name  == "Al-Quran Online AQ")
-            @if( $value->total_hour <= 7.9)
+            @if( $finalhour <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM35</td>
-            @elseif( $value->total_hour <= 11.9)
+            @elseif( $finalhour <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM30</td>
-            @elseif( $value->total_hour >= 12)
+            @elseif( $finalhour >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM25</td>
             @endif
 
             @elseif($value->class_name->name  == "Fardhu Ain Fizikal AQ")
-            @if( $value->total_hour <= 7.9)
+            @if( $finalhour <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM60</td>
-            @elseif( $value->total_hour <= 11.9)
+            @elseif( $finalhour <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM55</td>
-            @elseif( $value->total_hour >= 12)
+            @elseif( $finalhour >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM50</td>
             @endif
 
             @elseif($value->class_name->name  == "Al-Quran Fizikal AQ")
-            @if( $value->total_hour <= 7.9)
+            @if( $finalhour <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM50</td>
-            @elseif( $value->total_hour <= 11.9)
+            @elseif( $finalhour <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  "">RM45</td>
-            @elseif( $value->total_hour >= 12)
+            @elseif( $finalhour >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM40</td>
             @endif
 
@@ -134,43 +134,43 @@ ALQORI ACADEMY ENTERPRISE <br>
           <!-- fee-->
 
             @if($value->class_name->name  == "Fardhu Ain Online AQ")
-            @if( $value->total_hour <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $value->total_hour }}</td>
-            @elseif( $value->total_hour <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $value->total_hour }}</td>
-            @elseif( $value->total_hour >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $value->total_hour }}</td>
+            @if( $finalhour <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $finalhour }}</td>
+            @elseif( $finalhour <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $finalhour }}</td>
+            @elseif( $finalhour >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $finalhour }}</td>
             @endif
 
             @elseif($value->class_name->name  == "Al-Quran Online AQ")
-            @if( $value->total_hour <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $value->total_hour }}</td>
-            @elseif( $value->total_hour <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $value->total_hour }}</td>
-            @elseif( $value->total_hour >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 25 * $value->total_hour }}</td>
+            @if( $finalhour <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $finalhour }}</td>
+            @elseif( $finalhour <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $finalhour }}</td>
+            @elseif( $finalhour >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 25 * $finalhour }}</td>
             @endif
 
             @elseif($value->class_name->name  == "Fardhu Ain Fizikal AQ")
-            @if( $value->total_hour <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 60 * $value->total_hour }}</td>
-            @elseif( $value->total_hour <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 55 * $value->total_hour }}</td>
-            @elseif( $value->total_hour >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $value->total_hour }}</td>
+            @if( $finalhour <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 60 * $finalhour }}</td>
+            @elseif( $finalhour <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 55 * $finalhour }}</td>
+            @elseif( $finalhour >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $finalhour }}</td>
             @endif
 
             @elseif($value->class_name->name  == "Al-Quran Fizikal AQ")
-            @if( $value->total_hour <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $value->total_hour }}</td>
-            @elseif( $value->total_hour <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 45 * $value->total_hour }}</td>
-            @elseif( $value->total_hour >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $value->total_hour }}</td>
+            @if( $finalhour <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $finalhour }}</td>
+            @elseif( $finalhour <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 45 * $finalhour }}</td>
+            @elseif( $finalhour >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $finalhour }}</td>
             @endif
 
             @else
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">  RM{{ $value->class_name->feeperhour * $value->total_hour ?? '' }}</td>
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">  RM{{ $value->class_name->feeperhour * $finalhour ?? '' }}</td>
             @endif
 
         </tr>
@@ -181,41 +181,41 @@ ALQORI ACADEMY ENTERPRISE <br>
 
 
         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider  ">  {{ $value->class_name_2->name ?? '' }}</td>
-        <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">{{ $value->total_hour_2 ?? '' }}</td>
+        <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">{{ $finalhour_2 ?? '' }}</td>
      @if($value->class_name_2 != NULL)
         @if($value->class_name_2->name  == "Fardhu Ain Online AQ")
-            @if( $value->total_hour_2 <= 7.9)
+            @if( $finalhour_2 <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM40</td>
-            @elseif( $value->total_hour_2 <= 11.9)
+            @elseif( $finalhour_2 <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM35</td>
-            @elseif( $value->total_hour_2 >= 12)
+            @elseif( $finalhour_2 >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM30</td>
             @endif
 
             @elseif($value->class_name_2->name  == "Al-Quran Online AQ")
-            @if( $value->total_hour_2 <= 7.9)
+            @if( $finalhour_2 <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM35</td>
-            @elseif( $value->total_hour_2 <= 11.9)
+            @elseif( $finalhour_2 <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM30</td>
-            @elseif( $value->total_hour_2 >= 12)
+            @elseif( $finalhour_2 >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM25</td>
             @endif
 
             @elseif($value->class_name_2->name  == "Fardhu Ain Fizikal AQ")
-            @if( $value->total_hour_2 <= 7.9)
+            @if( $finalhour_2 <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM60</td>
-            @elseif( $value->total_hour_2 <= 11.9)
+            @elseif( $finalhour_2 <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM55</td>
-            @elseif( $value->total_hour_2 >= 12)
+            @elseif( $finalhour_2 >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM50</td>
             @endif
 
             @elseif($value->class_name_2->name  == "Al-Quran Fizikal AQ")
-            @if( $value->total_hour_2 <= 7.9)
+            @if( $finalhour_2 <= 7.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM50</td>
-            @elseif( $value->total_hour_2 <= 11.9)
+            @elseif( $finalhour_2 <= 11.9)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM45</td>
-            @elseif( $value->total_hour_2 >= 12)
+            @elseif( $finalhour_2 >= 12)
             <td class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM40</td>
             @endif
 
@@ -228,43 +228,43 @@ ALQORI ACADEMY ENTERPRISE <br>
           <!-- fee 2-->
           @if($value->class_name_2 != NULL)
             @if($value->class_name_2->name  == "Fardhu Ain Online AQ")
-            @if( $value->total_hour_2 <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $value->total_hour_2 }}</td>
+            @if( $finalhour_2 <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $finalhour_2 }}</td>
             @endif
 
             @elseif($value->class_name_2->name  == "Al-Quran Online AQ")
-            @if( $value->total_hour_2 <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 25 * $value->total_hour_2 }}</td>
+            @if( $finalhour_2 <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 35 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 30 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 25 * $finalhour_2 }}</td>
             @endif
 
             @elseif($value->class_name_2->name  == "Fardhu Ain Fizikal AQ")
-            @if( $value->total_hour_2 <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 60 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 55 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $value->total_hour_2 }}</td>
+            @if( $finalhour_2 <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 60 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 55 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $finalhour_2 }}</td>
             @endif
 
             @elseif($value->class_name_2->name  == "Al-Quran Fizikal AQ")
-            @if( $value->total_hour_2 <= 7.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 <= 11.9)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 45 * $value->total_hour_2 }}</td>
-            @elseif( $value->total_hour_2 >= 12)
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $value->total_hour_2 }}</td>
+            @if( $finalhour_2 <= 7.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 50 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 <= 11.9)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 45 * $finalhour_2 }}</td>
+            @elseif( $finalhour_2 >= 12)
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  ">RM{{ 40 * $finalhour_2 }}</td>
             @endif
 
             @else
-            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  "> RM{{ $value->class_name_2->feeperhour * $value->total_hour_2 ?? '' }}</td>
+            <td class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider  "> RM{{ $value->class_name_2->feeperhour * $finalhour_2 ?? '' }}</td>
             @endif
         @endif
 
