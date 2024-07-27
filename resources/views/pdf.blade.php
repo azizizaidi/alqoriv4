@@ -344,6 +344,8 @@
                 @else
                     @php $rate = $value->class_name->feeperhour ?? 0; @endphp
                 @endif
+
+               
                 <td class="center-align" style="padding: 12px; line-height: 20px;">RM{{ $rate }}</td>
                 @php
                     $subtotal = $rate * ($value->total_hour ?? 0);
@@ -414,7 +416,7 @@
                 @php
                     $subtotal_2 = $rate_2 * ($value->total_hour_2 ?? 0);
                     $total += $subtotal_2;
-                    $finalhour = $value->total_hour + $value->total_hour_2;
+                   
                 @endphp
                 <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal_2 }}</td>
             </tr>
