@@ -6,6 +6,7 @@
 @endif
 @if(Auth::user()->roles->contains(4))
 @livewire(\App\Filament\Widgets\ClientStats::class)
+@livewire('memo')
 @endif
 @if(Auth::user()->roles->contains(1))
 @livewire(\App\Filament\Widgets\AdminStats::class)
