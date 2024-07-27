@@ -177,6 +177,11 @@
         table tr:last-child td:last-child {
             border-bottom-right-radius: 10px;
         }
+
+        /* Custom style for centered cells in Jumlah Jam row */
+        table tr.total td.center-align {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -192,7 +197,6 @@
                 <p class="section-title">Invois Kepada:</p>
                 <p><strong>{{ $value->registrar->name }}</strong></p>
                 <p>{{$value->registrar->code}}</p>
-               
             </div>
             <div class="invoice-details">
                 <p><strong>Nombor Invois:</strong> {{$value->id}}</p>
@@ -203,7 +207,7 @@
             <tr class="heading">
                 <th class="center-align">No.</th>
                 <th class="left-align">Kelas</th>
-                <th class="center-align">Jumlah Jam</th>
+                <th class="center-align">Jam</th>
                 <th class="center-align">Harga Per Jam</th>
                 <th class="right-align">Harga Sebenar</th>
             </tr>
@@ -215,68 +219,66 @@
             @if($value->class_name_2 == NULL)
                 <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $key + 1 }}</td>
                 <td class="left-align" style="padding: 12px; line-height: 20px;">{{ $value->class_name->name ?? '' }}</td>
-                <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $value->total_hour ?? '' }}</td>
+                <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $finalhour ?? '' }}</td>
                 @php
                     $rate = 0;
                     $subtotal = 0;
                 @endphp
                 <!--kelas single sahaja-->
-              
                 @if($value->class_name->name == "Fardhu Ain Online AQ")
-                    @if($value->total_hour <= 7.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 40; @endphp
-                    @elseif($value->total_hour <= 11.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 35; @endphp
-                    @elseif($value->total_hour >= 12)
+                    @elseif($finalhour >= 12)
                         @php $rate = 30; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Online AQ")
-                    @if($value->total_hour <= 7.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 35; @endphp
-                    @elseif($value->total_hour <= 11.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 30; @endphp
-                    @elseif($value->total_hour >= 12)
+                    @elseif($finalhour >= 12)
                         @php $rate = 25; @endphp
                     @endif
                 @elseif($value->class_name->name == "Fardhu Ain Fizikal AQ")
-                    @if($value->total_hour <= 7.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 60; @endphp
-                    @elseif($value->total_hour <= 11.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 55; @endphp
-                    @elseif($value->total_hour >= 12)
+                    @elseif($finalhour >= 12)
                         @php $rate = 50; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Fizikal AQ")
-                    @if($value->total_hour <= 7.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 50; @endphp
-                    @elseif($value->total_hour <= 11.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 45; @endphp
-                    @elseif($value->total_hour >= 12)
+                    @elseif($finalhour >= 12)
                         @php $rate = 40; @endphp
                     @endif
                 @elseif($value->class_name->name == "Fardhu Ain Fizikal DQ")
-                    @if($value->total_hour <= 4.9)
+                    @if($finalhour <= 4.9)
                         @php $rate = 70; @endphp
-                    @elseif($value->total_hour <= 8.9)
+                    @elseif($finalhour <= 8.9)
                         @php $rate = 65; @endphp
-                    @elseif($value->total_hour >= 9)
+                    @elseif($finalhour >= 9)
                         @php $rate = 60; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Fizikal DQ")
-                    @if($value->total_hour <= 4.9)
+                    @if($finalhour <= 4.9)
                         @php $rate = 60; @endphp
-                    @elseif($value->total_hour <= 8.9)
+                    @elseif($finalhour <= 8.9)
                         @php $rate = 55; @endphp
-                    @elseif($value->total_hour >= 9)
+                    @elseif($finalhour >= 9)
                         @php $rate = 50; @endphp
                     @endif
                 @else
                     @php $rate = $value->class_name->feeperhour ?? 0; @endphp
                 @endif
-               
                 <td class="center-align" style="padding: 12px; line-height: 20px;">RM{{ $rate }}</td>
                 @php
-                    $subtotal = $rate * ($value->total_hour ?? 0);
+                    $subtotal = $rate * ($finalhour ?? 0);
                     $total += $subtotal;
                 @endphp
                 <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal }}</td>
@@ -284,146 +286,144 @@
             </tr>
             @if($value->class_name_2 != NULL)
             <tr>
-                    <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $key + 1 }}</td>
-                    <td class="left-align" style="padding: 12px; line-height: 20px;">{{ $value->class_name->name ?? '' }}</td>
-                
-                
-                    <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $value->total_hour ?? '' }}</td>
-                
-                    @php
-                        $rate = 0;
-                        $subtotal = 0;
-                    @endphp
-
-                 @if($value->class_name->name == "Fardhu Ain Online AQ")
-                    @if($value->total_hour <= 3.9)
+                <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $key + 1 }}</td>
+                <td class="left-align" style="padding: 12px; line-height: 20px;">{{ $value->class_name->name ?? '' }}</td>
+                <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $value->total_hour ?? '' }}</td>
+                @php
+                    $rate = 0;
+                    $subtotal = 0;
+                @endphp
+                @if($value->class_name->name == "Fardhu Ain Online AQ")
+                    @if($finalhour <= 7.9)
                         @php $rate = 40; @endphp
-                    @elseif($value->total_hour <= 7.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 35; @endphp
-                    @elseif($value->total_hour >= 8)
+                    @elseif($finalhour >= 12)
                         @php $rate = 30; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Online AQ")
-                    @if($value->total_hour <= 3.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 35; @endphp
-                    @elseif($value->total_hour <= 7.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 30; @endphp
-                    @elseif($value->total_hour >= 8)
+                    @elseif($finalhour >= 12)
                         @php $rate = 25; @endphp
                     @endif
                 @elseif($value->class_name->name == "Fardhu Ain Fizikal AQ")
-                    @if($value->total_hour <= 3.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 60; @endphp
-                    @elseif($value->total_hour <= 7.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 55; @endphp
-                    @elseif($value->total_hour >= 8)
+                    @elseif($finalhour >= 12)
                         @php $rate = 50; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Fizikal AQ")
-                    @if($value->total_hour <= 3.9)
+                    @if($finalhour <= 7.9)
                         @php $rate = 50; @endphp
-                    @elseif($value->total_hour <= 7.9)
+                    @elseif($finalhour <= 11.9)
                         @php $rate = 45; @endphp
-                    @elseif($value->total_hour >= 8)
+                    @elseif($finalhour >= 12)
                         @php $rate = 40; @endphp
                     @endif
                 @elseif($value->class_name->name == "Fardhu Ain Fizikal DQ")
-                    @if($value->total_hour <= 2.4)
+                    @if($finalhour <= 4.9)
                         @php $rate = 70; @endphp
-                    @elseif($value->total_hour <= 4.4)
+                    @elseif($finalhour <= 8.9)
                         @php $rate = 65; @endphp
-                    @elseif($value->total_hour >= 4.5)
+                    @elseif($finalhour >= 9)
                         @php $rate = 60; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Fizikal DQ")
-                    @if($value->total_hour <= 2.4)
+                    @if($finalhour <= 4.9)
                         @php $rate = 60; @endphp
-                    @elseif($value->total_hour <= 4.4)
+                    @elseif($finalhour <= 8.9)
                         @php $rate = 55; @endphp
-                    @elseif($value->total_hour >= 4.5)
+                    @elseif($finalhour >= 9)
                         @php $rate = 50; @endphp
                     @endif
                 @else
                     @php $rate = $value->class_name->feeperhour ?? 0; @endphp
                 @endif
-                  
-                    <td class="center-align" style="padding: 12px; line-height: 20px;">RM{{ $rate }}</td>
-                    @php
-                        $subtotal = $rate * ($value->total_hour ?? 0);
-                        $total += $subtotal;
-                    @endphp
-                    <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal }}</td>
-                </tr>
-                <tr>
-                    <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $key + 2 }}</td>
-                    <td class="left-align" style="padding: 12px; line-height: 20px;">{{ $value->class_name_2->name ?? '' }}</td>
-                
-                
-                    <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $value->total_hour_2 ?? '' }}</td>
-                
-                    @php
-                        $rate_2 = 0;
-                        $subtotal_2 = 0;
-                    @endphp
-                 
-                    @if($value->class_name_2->name == "Fardhu Ain Online AQ")
-                        @if($value->total_hour_2 <= 7.9)
-                            @php $rate_2 = 40; @endphp
-                        @elseif($value->total_hour_2 <= 11.9)
-                            @php $rate_2 = 35; @endphp
-                        @elseif($value->total_hour_2 >= 12)
-                            @php $rate_2 = 30; @endphp
-                        @endif
-                    @elseif($value->class_name_2->name == "Al-Quran Online AQ")
-                        @if($value->total_hour_2 <= 7.9)
-                            @php $rate_2 = 35; @endphp
-                        @elseif($value->total_hour_2 <= 11.9)
-                            @php $rate_2 = 30; @endphp
-                        @elseif($value->total_hour_2 >= 12)
-                            @php $rate_2 = 25; @endphp
-                        @endif
-                    @elseif($value->class_name_2->name == "Fardhu Ain Fizikal AQ")
-                        @if($value->total_hour_2 <= 7.9)
-                            @php $rate_2 = 60; @endphp
-                        @elseif($value->total_hour_2 <= 11.9)
-                            @php $rate_2 = 55; @endphp
-                        @elseif($value->total_hour_2 >= 12)
-                            @php $rate_2 = 50; @endphp
-                        @endif
-                    @elseif($value->class_name_2->name == "Al-Quran Fizikal AQ")
-                        @if($value->total_hour_2 <= 7.9)
-                            @php $rate_2 = 50; @endphp
-                        @elseif($value->total_hour_2 <= 11.9)
-                            @php $rate_2 = 45; @endphp
-                        @elseif($value->total_hour_2 >= 12)
-                            @php $rate_2 = 40; @endphp
-                        @endif
-                    @elseif($value->class_name_2->name == "Fardhu Ain Fizikal DQ")
-                        @if($value->total_hour_2 <= 4.9)
-                            @php $rate_2 = 70; @endphp
-                        @elseif($value->total_hour_2 <= 8.9)
-                            @php $rate_2 = 65; @endphp
-                        @elseif($value->total_hour_2 >= 9)
-                            @php $rate_2 = 60; @endphp
-                        @endif
-                    @elseif($value->class_name_2->name == "Al-Quran Fizikal DQ")
-                        @if($value->total_hour_2 <= 4.9)
-                            @php $rate_2 = 60; @endphp
-                        @elseif($value->total_hour_2 <= 8.9)
-                            @php $rate_2 = 55; @endphp
-                        @elseif($value->total_hour_2 >= 9)
-                            @php $rate_2 = 50; @endphp
-                        @endif
-                    @else
-                        @php $rate_2 = $value->class_name_2->feeperhour ?? 0; @endphp
+
+               
+                <td class="center-align" style="padding: 12px; line-height: 20px;">RM{{ $rate }}</td>
+                @php
+                    $subtotal = $rate * ($value->total_hour ?? 0);
+                    $total += $subtotal;
+                @endphp
+                <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal }}</td>
+            </tr>
+            <tr>
+                <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $key + 2 }}</td>
+                <td class="left-align" style="padding: 12px; line-height: 20px;">{{ $value->class_name_2->name ?? '' }}</td>
+                <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $value->total_hour_2 ?? '' }}</td>
+                @php
+                    $rate_2 = 0;
+                    $subtotal_2 = 0;
+                @endphp
+                @if($value->class_name_2->name == "Fardhu Ain Online AQ")
+                    @if($finalhour <= 7.9)
+                        @php $rate_2 = 40; @endphp
+                    @elseif($finalhour <= 11.9)
+                        @php $rate_2 = 35; @endphp
+                    @elseif($finalhour >= 12)
+                        @php $rate_2 = 30; @endphp
                     @endif
-                    <td class="center-align" style="padding: 12px; line-height: 20px;">RM{{ $rate_2 }}</td>
-                    @php
-                        $subtotal_2 = $rate_2 * ($value->total_hour_2 ?? 0);
-                        $total += $subtotal_2;
-                    @endphp
-                    <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal_2 }}</td>
-                </tr>
+                @elseif($value->class_name_2->name == "Al-Quran Online AQ")
+                    @if($finalhour <= 7.9)
+                        @php $rate_2 = 35; @endphp
+                    @elseif($finalhour <= 11.9)
+                        @php $rate_2 = 30; @endphp
+                    @elseif($finalhour >= 12)
+                        @php $rate_2 = 25; @endphp
+                    @endif
+                @elseif($value->class_name_2->name == "Fardhu Ain Fizikal AQ")
+                    @if($finalhour <= 7.9)
+                        @php $rate_2 = 60; @endphp
+                    @elseif($finalhour <= 11.9)
+                        @php $rate_2 = 55; @endphp
+                    @elseif($finalhour >= 12)
+                        @php $rate_2 = 50; @endphp
+                    @endif
+                @elseif($value->class_name_2->name == "Al-Quran Fizikal AQ")
+                    @if($finalhour <= 7.9)
+                        @php $rate_2 = 50; @endphp
+                    @elseif($finalhour <= 11.9)
+                        @php $rate_2 = 45; @endphp
+                    @elseif($finalhour >= 12)
+                        @php $rate_2 = 40; @endphp
+                    @endif
+                @elseif($value->class_name_2->name == "Fardhu Ain Fizikal DQ")
+                    @if($finalhour <= 4.9)
+                        @php $rate_2 = 70; @endphp
+                    @elseif($finalhour <= 8.9)
+                        @php $rate_2 = 65; @endphp
+                    @elseif($finalhour >= 9)
+                        @php $rate_2 = 60; @endphp
+                    @endif
+                @elseif($value->class_name_2->name == "Al-Quran Fizikal DQ")
+                    @if($finalhour <= 4.9)
+                        @php $rate_2 = 60; @endphp
+                    @elseif($finalhour <= 8.9)
+                        @php $rate_2 = 55; @endphp
+                    @elseif($finalhour >= 9)
+                        @php $rate_2 = 50; @endphp
+                    @endif
+                @else
+                    @php $rate_2 = $value->class_name_2->feeperhour ?? 0; @endphp
+                @endif
+                <td class="center-align" style="padding: 12px; line-height: 20px;">RM{{ $rate_2 }}</td>
+                @php
+                    $subtotal_2 = $rate_2 * ($value->total_hour_2 ?? 0);
+                    $total += $subtotal_2;
+                   
+                @endphp
+                <td class="right-align" style="padding: 12px; line-height: 20px;">RM{{ $subtotal_2 }}</td>
+            </tr>
+            <tr class="total">
+                <td colspan="2" class="right-align" style="padding: 12px; line-height: 20px;"><strong>Jumlah Jam:</strong></td>
+                <td colspan="1" class="center-align highlight-total" style="padding: 12px; line-height: 20px;">{{ $finalhour }} jam</td>
+            </tr>
             @endif
         </table>
         <table>
@@ -436,8 +436,6 @@
         <p>
             {{$value->date}}, {{$value->date_2}}
         </p>
-    
-  
         <div class="payment-info">
             <p class="section-title">Bayaran Kepada:</p>
             <p>No. akaun: 8010231211</p>
@@ -447,18 +445,12 @@
         </div>
         <div class="terms">
             <p class="section-title">Terma:</p>
-            <p>Pembayaran hendaklah dibuat selewat-lewatnya lima hari
-selepas invois dikeluarkan. Kelewatan boleh menyebabkan
-kelas ditangguhkan buat sementara. Terima kasih.</p>
+            <p>Pembayaran hendaklah dibuat selewat-lewatnya lima hari selepas invois dikeluarkan. Kelewatan boleh menyebabkan kelas ditangguhkan buat sementara. Terima kasih.</p>
         </div>
         <div class="footer">
-            <p>No. Telefon: +601162218429</p>    <p>Web: www.alqori.com</p>
-         
-           
+            <p>No. Telefon: +601162218429</p>    
+            <p>Web: www.alqori.com</p>
         </div>
-      <!--  <div class="signature">
-            <p class="signature-text"><strong>Authorised Sign</strong></p>
-        </div>-->
     </div>
 </body>
 </html>
