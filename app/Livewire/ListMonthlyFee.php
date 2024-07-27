@@ -163,7 +163,7 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
                     ->url(fn(ReportClass $pay): string => route('toyyibpay.createBill', $pay))
                     ->visible(fn(Model $record) => $record->status != 1),
                 Action::make('pdf')
-                    ->label('PDF')
+                    ->label('Invois')
                     ->color('danger')
                     ->icon('heroicon-c-clipboard-document-list')
                     ->action(function(ReportClass $record) {
