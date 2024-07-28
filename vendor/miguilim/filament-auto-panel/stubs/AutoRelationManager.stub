@@ -1,0 +1,51 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Filament\Resources\{{ relatedResource }};
+use Filament\Tables\Table;
+use Miguilim\FilamentAutoPanel\AutoRelationManager;
+
+class {{ managerClass }} extends AutoRelationManager
+{
+    protected static string $relatedResource = {{ relatedResource }}::class;
+
+    protected static string $relationship = '{{ relationship }}';
+
+    protected static ?string $recordTitleAttribute = '{{ recordTitleAttribute }}';
+
+    protected static array $enumDictionary = [];
+
+    protected static array $visibleColumns = [];
+
+    protected static array $searchableColumns = [];
+
+    public function getFilters(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public function getActions(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public function getColumnsOverwrite(): array
+    {
+        return [
+            'table' => [
+                //
+            ],
+            'form' => [
+                //
+            ],
+            'infolist' => [
+                //
+            ],
+        ];
+    }
+}
