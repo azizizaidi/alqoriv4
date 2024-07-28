@@ -4,12 +4,12 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-e406f2b7.css",
+    "file": "assets/app-45b019c8.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/filament/admin/theme.css": {
-    "file": "assets/theme-02ac7ef4.css",
+    "file": "assets/theme-225dc8df.css",
     "isEntry": true,
     "src": "resources/css/filament/admin/theme.css"
   },
