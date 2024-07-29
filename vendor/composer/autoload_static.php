@@ -266,12 +266,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
             'Coolsam\\FilamentFlatpickr\\' => 26,
             'Composer\\Semver\\' => 16,
             'Complex\\' => 8,
-            'Codeat3\\BladePhosphorIcons\\' => 27,
-            'Codeat3\\BladeIconpark\\' => 22,
-            'Codeat3\\BladeGoogleMaterialDesignIcons\\' => 39,
-            'Codeat3\\BladeForkAwesome\\' => 25,
-            'Codeat3\\BladeFluentUiSystemIcons\\' => 33,
-            'Codeat3\\BladeEosIcons\\' => 22,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
@@ -493,8 +487,8 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
-            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
+            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
+            1 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
         ),
         'Spatie\\Invade\\' => 
         array (
@@ -502,8 +496,8 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/ignition/src',
-            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
+            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
+            1 => __DIR__ . '/..' . '/spatie/ignition/src',
         ),
         'Spatie\\Health\\Database\\Factories\\' => 
         array (
@@ -904,30 +898,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
         ),
-        'Codeat3\\BladePhosphorIcons\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/codeat3/blade-phosphor-icons/src',
-        ),
-        'Codeat3\\BladeIconpark\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/codeat3/blade-iconpark/src',
-        ),
-        'Codeat3\\BladeGoogleMaterialDesignIcons\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/codeat3/blade-google-material-design-icons/src',
-        ),
-        'Codeat3\\BladeForkAwesome\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/codeat3/blade-forkawesome/src',
-        ),
-        'Codeat3\\BladeFluentUiSystemIcons\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/codeat3/blade-fluentui-system-icons/src',
-        ),
-        'Codeat3\\BladeEosIcons\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/codeat3/blade-eos-icons/src',
-        ),
         'Carbon\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
@@ -1124,6 +1094,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Filament\\Resources\\UserResource\\Pages\\EditUser' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/EditUser.php',
         'App\\Filament\\Resources\\UserResource\\Pages\\ListUsers' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/ListUsers.php',
         'App\\Filament\\Resources\\UserResource\\RelationManagers\\RolesRelationManager' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/RelationManagers/RolesRelationManager.php',
+        'App\\Filament\\Widgets\\AdminStats' => __DIR__ . '/../..' . '/app/Filament/Widgets/AdminStats.php',
         'App\\Filament\\Widgets\\ClientStats' => __DIR__ . '/../..' . '/app/Filament/Widgets/ClientStats.php',
         'App\\Filament\\Widgets\\StatsOverview' => __DIR__ . '/../..' . '/app/Filament/Widgets/StatsOverview.php',
         'App\\Filament\\Widgets\\TabsWidget' => __DIR__ . '/../..' . '/app/Filament/Widgets/TabsWidget.php',
@@ -1147,6 +1118,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Livewire\\ListMonthlyFee' => __DIR__ . '/../..' . '/app/Livewire/ListMonthlyFee.php',
         'App\\Livewire\\ListMyClients' => __DIR__ . '/../..' . '/app/Livewire/ListMyClients.php',
         'App\\Livewire\\ListTransaction' => __DIR__ . '/../..' . '/app/Livewire/ListTransaction.php',
+        'App\\Livewire\\Memo' => __DIR__ . '/../..' . '/app/Livewire/Memo.php',
         'App\\Livewire\\Notifications' => __DIR__ . '/../..' . '/app/Livewire/Notifications.php',
         'App\\Livewire\\OverduePayList' => __DIR__ . '/../..' . '/app/Livewire/OverduePayList.php',
         'App\\Livewire\\OverduePayment' => __DIR__ . '/../..' . '/app/Livewire/OverduePayment.php',
@@ -1386,12 +1358,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'Carbon\\TranslatorImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorImmutable.php',
         'Carbon\\TranslatorStrongTypeInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorStrongTypeInterface.php',
-        'Codeat3\\BladeEosIcons\\BladeEosIconsServiceProvider' => __DIR__ . '/..' . '/codeat3/blade-eos-icons/src/BladeEosIconsServiceProvider.php',
-        'Codeat3\\BladeFluentUiSystemIcons\\BladeFluentUiSystemIconsServiceProvider' => __DIR__ . '/..' . '/codeat3/blade-fluentui-system-icons/src/BladeFluentUiSystemIconsServiceProvider.php',
-        'Codeat3\\BladeForkAwesome\\BladeForkAwesomeServiceProvider' => __DIR__ . '/..' . '/codeat3/blade-forkawesome/src/BladeForkAwesomeServiceProvider.php',
-        'Codeat3\\BladeGoogleMaterialDesignIcons\\BladeGoogleMaterialDesignIconsServiceProvider' => __DIR__ . '/..' . '/codeat3/blade-google-material-design-icons/src/BladeGoogleMaterialDesignIconsServiceProvider.php',
-        'Codeat3\\BladeIconpark\\BladeIconparkServiceProvider' => __DIR__ . '/..' . '/codeat3/blade-iconpark/src/BladeIconparkServiceProvider.php',
-        'Codeat3\\BladePhosphorIcons\\BladePhosphorIconsServiceProvider' => __DIR__ . '/..' . '/codeat3/blade-phosphor-icons/src/BladePhosphorIconsServiceProvider.php',
         'Complex\\Complex' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Complex.php',
         'Complex\\Exception' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Exception.php',
         'Complex\\Functions' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Functions.php',
