@@ -178,7 +178,7 @@
             border-bottom-right-radius: 10px;
         }
 
-        /* Custom style for centered cells in Jumlah Jam row */
+        /* Custom style for centered cells in test Jumlah Jam row */
         table tr.total td.center-align {
             text-align: center;
         }
