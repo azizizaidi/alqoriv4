@@ -66,7 +66,7 @@ var alwjun24 = <?php echo $reportclasses->where('month','06-2024')->whereNull('d
 // Define the chart data and options
 
 var chartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November','December'],
+    labels: ['Januari', 'Februari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November','Disember'],
     datasets: [{
       backgroundColor: 'rgba(255, 99, 71, 1)',
       borderColor: 'rgba(255, 108, 49, 0.3)',
