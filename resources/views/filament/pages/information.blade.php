@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-@livewire('coming-soon')
+@livewire('memo')
 </x-filament-panels::page>

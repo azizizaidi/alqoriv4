@@ -45,11 +45,11 @@ class StatsOverview extends BaseWidget
              ]), 
 
               
-            Stat::make('Jumlah Kelas Aktif', '7')
-            ->extraAttributes([ 
+         //   Stat::make('Jumlah Kelas Aktif', '7')
+           // ->extraAttributes([ 
                 // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                //  'class' => 'cursor-pointer border-teal-400',
-             ]), 
+         //    ]), 
 
               
         ];
