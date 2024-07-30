@@ -48,11 +48,13 @@ class UserResource extends Resource
                 ->label('Nama')
                 ->searchable(),
                 TextColumn::make('code')
-                ->label('Kod Ahli'),
+                ->label('Kod Ahli')
+                ->searchable(isIndividual: true),
                 TextColumn::make('roles.name')
                 ->label('Peranan'),
                 TextColumn::make('email')
-                ->label('ID Log Masuk'),
+                ->label('ID Log Masuk')
+                ->searchable(isIndividual: true),
                 TextColumn::make('created_at')
                 ->label('Tarikh Didaftarkan'),
                 TextColumn::make('deleted_at')
