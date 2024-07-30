@@ -360,6 +360,9 @@ class ReportClassResource extends Resource
                     '02-2024' => 'Februari 2024',
                     '03-2024' => 'Mac 2024',
                     '04-2024' => 'April 2024',
+                    '05-2024' => 'Mei 2024',
+                    '06-2024' => 'Jun 2024',
+                    '07-2024' => 'Julai 2024',
                 ])
             
             ])
