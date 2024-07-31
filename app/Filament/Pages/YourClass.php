@@ -27,4 +27,9 @@ class YourClass extends Page
     {
         return __('Kelas');
     }
+
+    public static function canAccess(): bool
+    {
+        return auth()->user()->can('view_your_class');
+    }
 }
