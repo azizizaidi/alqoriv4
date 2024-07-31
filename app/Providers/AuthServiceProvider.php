@@ -26,8 +26,8 @@ class AuthServiceProvider extends ServiceProvider
        // 'Bilfeldt\LaravelRouteStatistics\Models\RouteStatistic' => 'App\Policies\RouteStatisticPolicy',
        // 'App\Models\User' => 'App\Policies\UserPolicy'
       //  User::class => UserPolicy::class,
-      Role::class => RolePolicy::class,
-      Permission::class => PermissionPolicy::class,
+     // Role::class => RolePolicy::class,
+    //  Permission::class => PermissionPolicy::class,
       RouteStatistic::class => RouteStatisticPolicy::class
 
     ];
