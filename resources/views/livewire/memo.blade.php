@@ -28,19 +28,19 @@
             <p><strong>SILA BACA DAN LAKSANA</strong></p>
             <br>
             <ol>
-                <li>Sila pastikan betul2 semua info berkaitan kelas iaitu kod, nama pendaftar/pelajar total jam kelas sebulan adalah TEPAT!</li>
+                <li>Sila pastikan betul2 semua info berkaitan kelas iaitu kod, nama klien total jam kelas sebulan adalah TEPAT!</li>
                <br>
                 <li>Hantar sekali sahaja untuk satu kod kelas! Sila totalkan jam kelas sebulan untuk setiap kod kelas. (Bukan hantar banyak kali untuk satu kod kelas)</li>
                 <br>
                 <li>GURU PERLU BUAT KIRAAN SENDIRI JAM DAN ELAUN SEMASA UNTUK PASTIKAN ELAUN DALAM SISTEM TALLY! </li>
                 <br>
-                 <li> Rujuk senarai elaun per jam dan totalkan untuk sebulan. Jika jumlah yang ditunjukkan dalam sistem selepas anda menghantar sama dengan kiraan beerti laporan tersebut betul tetapi jika sebaliknya sila perbaiki dan betulkan.</li>
+                 <li> Rujuk senarai elaun per jam dan jumlahkan untuk sebulan. Jika jumlah yang ditunjukkan dalam sistem selepas anda menghantar sama dengan kiraan beerti laporan tersebut betul tetapi jika sebaliknya sila perbaiki dan betulkan.</li>
                 <br>
-                 <li>Jangan maklumkan kesilapan selepas tarikh menghantar laporan telah ditutup kerana kesilapan akan memberi kesan kepada banyak perkara termasuk kepada pelajar anda apabila mereka telah membuat bayaran.</li>
+                 <li>Jangan maklumkan kesilapan selepas tarikh menghantar laporan telah ditutup kerana kesilapan akan memberi kesan kepada banyak perkara termasuk kepada klien/pelajar anda apabila mereka telah membuat bayaran.</li>
                 <br>  
                  <li>Sistem beroperasi secara automatik, kesilapan guru dalam mengisi data akan memberi kesan secara keseluruhan termasuk yuran, elaun dan proses-proses yang terlibat.</li>
                 <br>
-                 <li><strong>SILA BACA DAN FAHAMI PANDUAN. SEBARANG KEKELIRUAN SILA RUJUK ADMIN!</strong></li>
+              
             </ol>
             
            
