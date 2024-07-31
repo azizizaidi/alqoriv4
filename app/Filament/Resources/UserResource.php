@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,6 +14,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\SelectColumn;
+use Filament\Forms\Components\Select;
 use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 use Filament\Forms\Components\TextInput;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
@@ -67,7 +70,7 @@ class UserResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
               
-              //  Impersonate::make(),
+                Impersonate::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -78,6 +81,21 @@ class UserResource extends Resource
                     ->label('Padam')
                     ->action(fn (Collection $records) => $records->each->delete())
                     ->icon('heroicon-s-trash'),
+                    BulkAction::make('assign_role')
+                        ->icon('heroicon-o-pencil')
+                        ->label('Assign Role')
+                        ->requiresConfirmation()
+                        ->action(function (array $data, Collection $records): void {
+                            $records->each(function (User $user) use ($data) {
+                                $user->roles()->sync($data['role_id']);
+                            });
+                        })
+                        ->form([
+                            Select::make('role_id')
+                                ->label('Role')
+                                ->options(Role::all()->pluck('name', 'id'))
+                                ->required(),
+                        ])
                 ]),
 
             ])
