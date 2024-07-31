@@ -12,6 +12,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
+use Filament\Tables\Grouping\Group;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
@@ -36,6 +37,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Tables\Actions\CreateAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Tables\Actions\BulkAction;
 use Filament\Forms\Components\TimePicker;
 //use Filament\Pages\Actions\Action;
 
@@ -287,9 +289,17 @@ class ReportClassResource extends Resource
             ->deferLoading()
             ->groups([
 
-                'created_by.name',
+             
                 'registrar.name',
                 'month'
+            ])
+            ->groups([
+                Group::make('created_by.name')
+                    ->label('Nama Guru'),
+                Group::make('registrar.name')
+                 //   ->visible(auth()->user()->hasRole(1))
+                    ->label('Nama Klien'),
+                    
             ])
             ->paginated([5,10, 25, 50, 100])
             ->columns([
@@ -384,7 +394,12 @@ class ReportClassResource extends Resource
             ->recordUrl(fn (ReportClass $record) => $record ? null : self::getUrl('view', ['record' => $record]))
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                  //  Tables\Actions\DeleteBulkAction::make(),
+                  BulkAction::make('delete')
+                  ->requiresConfirmation()
+                 ->label('Padam')
+                  ->action(fn (Collection $records) => $records->each->delete())
+                  ->icon('heroicon-s-trash'),
                 ]),
             ]);
     }
