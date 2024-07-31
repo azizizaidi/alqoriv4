@@ -1133,17 +1133,17 @@
         },
         {
             "name": "blade-ui-kit/blade-icons",
-            "version": "1.6.1",
-            "version_normalized": "1.6.1.0",
+            "version": "1.7.0",
+            "version_normalized": "1.7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blade-ui-kit/blade-icons.git",
-                "reference": "993d23c2bdabce06f3295e0ba07010badd0af71d"
+                "reference": "74275f44c71e815b85bf7cea66e3bf98c57fb7e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blade-ui-kit/blade-icons/zipball/993d23c2bdabce06f3295e0ba07010badd0af71d",
-                "reference": "993d23c2bdabce06f3295e0ba07010badd0af71d",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-icons/zipball/74275f44c71e815b85bf7cea66e3bf98c57fb7e4",
+                "reference": "74275f44c71e815b85bf7cea66e3bf98c57fb7e4",
                 "shasum": ""
             },
             "require": {
@@ -1160,7 +1160,7 @@
                 "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
                 "phpunit/phpunit": "^9.0|^10.5|^11.0"
             },
-            "time": "2024-07-26T07:32:09+00:00",
+            "time": "2024-07-29T21:49:30+00:00",
             "bin": [
                 "bin/blade-icons-generate"
             ],
@@ -7755,17 +7755,17 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.28",
-            "version_normalized": "10.5.28.0",
+            "version": "10.5.29",
+            "version_normalized": "10.5.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ff7fb85cdf88131b83e721fb2a327b664dbed275"
+                "reference": "8e9e80872b4e8064401788ee8a32d40b4455318f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ff7fb85cdf88131b83e721fb2a327b664dbed275",
-                "reference": "ff7fb85cdf88131b83e721fb2a327b664dbed275",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e9e80872b4e8064401788ee8a32d40b4455318f",
+                "reference": "8e9e80872b4e8064401788ee8a32d40b4455318f",
                 "shasum": ""
             },
             "require": {
@@ -7799,7 +7799,7 @@
             "suggest": {
                 "ext-soap": "To be able to generate mocks based on WSDL files"
             },
-            "time": "2024-07-18T14:54:16+00:00",
+            "time": "2024-07-30T11:08:00+00:00",
             "bin": [
                 "phpunit"
             ],
@@ -7839,7 +7839,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.28"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.29"
             },
             "funding": [
                 {
@@ -9999,17 +9999,17 @@
         },
         {
             "name": "shuvroroy/filament-spatie-laravel-health",
-            "version": "v2.0.1",
-            "version_normalized": "2.0.1.0",
+            "version": "v2.1.0",
+            "version_normalized": "2.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shuvroroy/filament-spatie-laravel-health.git",
-                "reference": "d78d07cdaa4c40741f0a8186929086b3017f682a"
+                "reference": "d18857e3d638c5657587aa9364549a18cb1bde42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shuvroroy/filament-spatie-laravel-health/zipball/d78d07cdaa4c40741f0a8186929086b3017f682a",
-                "reference": "d78d07cdaa4c40741f0a8186929086b3017f682a",
+                "url": "https://api.github.com/repos/shuvroroy/filament-spatie-laravel-health/zipball/d18857e3d638c5657587aa9364549a18cb1bde42",
+                "reference": "d18857e3d638c5657587aa9364549a18cb1bde42",
                 "shasum": ""
             },
             "require": {
@@ -10030,7 +10030,7 @@
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0"
             },
-            "time": "2023-10-30T15:48:46+00:00",
+            "time": "2024-07-27T14:59:07+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -10065,7 +10065,7 @@
             ],
             "support": {
                 "issues": "https://github.com/shuvroroy/filament-spatie-laravel-health/issues",
-                "source": "https://github.com/shuvroroy/filament-spatie-laravel-health/tree/v2.0.1"
+                "source": "https://github.com/shuvroroy/filament-spatie-laravel-health/tree/v2.1.0"
             },
             "funding": [
                 {
