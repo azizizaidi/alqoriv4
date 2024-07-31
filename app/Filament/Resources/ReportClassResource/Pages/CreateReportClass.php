@@ -99,6 +99,7 @@ class CreateReportClass extends CreateRecord
             $registrarName = $assignClassTeacher->registrar->id;
             $reportClass ->registrar_id = $registrarName;
             $reportClass ->status = 0;
+            $reportClass-> allowance_note ='belum_bayar';
 
 
 
