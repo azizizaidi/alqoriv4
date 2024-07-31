@@ -164,26 +164,28 @@ class CreateReportClass extends CreateRecord
             $reportClass->fee_student = 60 * $reportClass->total_hour;
         }
 
-}
+       }else{
+        $reportClass->fee_student = $reportClass->class_name->feeperhour * $reportClass->total_hour;
+       }
         
         
-        elseif($classname->name == "Al-Quran Online BQ"){
-            $reportClass->fee_student = 35 * $reportClass->total_hour;
-        }elseif($classname->name == "Al-Quran Online CQ"){
-            $reportClass->fee_student = 40 * $reportClass->total_hour;
-        }elseif($classname->name == "Fardhu Ain Online BQ"){
-            $reportClass->fee_student = 40 * $reportClass->total_hour;
-        }elseif($classname->name == "Al-Quran Fizikal BQ"){
-            $reportClass->fee_student = 50 * $reportClass->total_hour;
-        }elseif($classname->name == "Fardhu Ain Fizikal BQ"){
-            $reportClass->fee_student = 60 * $reportClass->total_hour;
-        }elseif($classname->name == "Fardhu Ain Online DQ"){
-            $reportClass->fee_student = 45 * $reportClass->total_hour;
-        }elseif($classname->name == "Al-Quran Fizikal DQ"){
-            $reportClass->fee_student = 60 * $reportClass->total_hour;
-        }elseif($classname->name == "Fardhu Ain Fizikal DQ"){
-            $reportClass->fee_student = 70 * $reportClass->total_hour;
-        }
+    //    elseif($classname->name == "Al-Quran Online BQ"){
+    //        $reportClass->fee_student = 35 * $reportClass->total_hour;
+    //    }elseif($classname->name == "Al-Quran Online CQ"){
+    //        $reportClass->fee_student = 40 * $reportClass->total_hour;
+   //     }elseif($classname->name == "Fardhu Ain Online BQ"){
+   //         $reportClass->fee_student = 40 * $reportClass->total_hour;
+   //     }elseif($classname->name == "Al-Quran Fizikal BQ"){
+   //         $reportClass->fee_student = 50 * $reportClass->total_hour;
+   //     }elseif($classname->name == "Fardhu Ain Fizikal BQ"){
+   //         $reportClass->fee_student = 60 * $reportClass->total_hour;
+   //     }elseif($classname->name == "Fardhu Ain Online DQ"){
+  //          $reportClass->fee_student = 45 * $reportClass->total_hour;
+  //      }elseif($classname->name == "Al-Quran Fizikal DQ"){
+   //         $reportClass->fee_student = 60 * $reportClass->total_hour;
+  //      }elseif($classname->name == "Fardhu Ain Fizikal DQ"){
+ //           $reportClass->fee_student = 70 * $reportClass->total_hour;
+  ///      }
 
        // $reportClass->save();
         //dd($reportClass);
@@ -233,78 +235,90 @@ class CreateReportClass extends CreateRecord
                     $reportClass->fee_student = 50 * $reportClass->total_hour;
                 }
 
-            }elseif($classname->name == "Al-Quran Online BQ"){
-                $reportClass->fee_student = 35 * $reportClass->total_hour;
-            }elseif($classname->name == "Al-Quran Online CQ"){
-                $reportClass->fee_student = 40 * $reportClass->total_hour;
-            }elseif($classname->name == "Fardhu Ain Online BQ"){
-                $reportClass->fee_student = 40 * $reportClass->total_hour;
-            }elseif($classname->name == "Al-Quran Fizikal BQ"){
-                $reportClass->fee_student = 50 * $reportClass->total_hour;
-            }elseif($classname->name == "Fardhu Ain Fizikal BQ"){
-                $reportClass->fee_student = 60 * $reportClass->total_hour;
-            }elseif($classname->name == "Fardhu Ain Online DQ"){
-                $reportClass->fee_student = 45 * $reportClass->total_hour;
             }elseif($classname->name == "Al-Quran Fizikal DQ"){
-                $reportClass->fee_student = 60 * $reportClass->total_hour;
-            }elseif($classname->name == "Fardhu Ain Fizikal DQ"){
+                if($finalhour <= 4.9){
+                    $reportClass->fee_student = 60 * $reportClass->total_hour;
+                }elseif($finalhour <= 8.9){
+                    $reportClass->fee_student = 55 * $reportClass->total_hour;
+                }elseif($finalhour >= 9){
+                    $reportClass->fee_student = 50 * $reportClass->total_hour;
+                }
+    
+           }elseif($classname->name == "Fardhu Ain Fizikal DQ"){
+            if($finalhour <= 4.9){
                 $reportClass->fee_student = 70 * $reportClass->total_hour;
+            }elseif($finalhour <= 8.9){
+                $reportClass->fee_student = 65 * $reportClass->total_hour;
+            }elseif($finalhour >= 9){
+                $reportClass->fee_student = 60 * $reportClass->total_hour;
             }
+    
+           }else{
+            $reportClass->fee_student = $classname->feeperhour * $reportClass->total_hour;
+           }
+            
+         
 
             //----------------------------------------------
             $feestudent = $reportClass->fee_student;
             if($classname_2->name == "Al-Quran Online AQ"){
-                if($reportClass->total_hour_2 <= 7.9){
+                if($finalhour <= 7.9){
                     $reportClass->fee_student = $feestudent + (35 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 <= 11.9){
+                }elseif($finalhour <= 11.9){
                     $reportClass->fee_student = $feestudent + (30 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 >= 12){
+                }elseif($finalhour >= 12){
                     $reportClass->fee_student = $feestudent + (25 * $reportClass->total_hour_2);
                 }
 
             }elseif($classname_2->name == "Fardhu Ain Online AQ"){
-                if($reportClass->total_hour_2 <= 7.9){
+                if($finalhour <= 7.9){
                     $reportClass->fee_student = $feestudent + (40 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 <= 11.9){
+                }elseif($finalhour <= 11.9){
                     $reportClass->fee_student = $feestudent + (35 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 >= 12){
+                }elseif($finalhour >= 12){
                     $reportClass->fee_student = $feestudent + (30 * $reportClass->total_hour_2);
                 }
 
             }elseif($classname_2->name == "Al-Quran Fizikal AQ"){
-                if($reportClass->total_hour_2 <= 7.9){
+                if($finalhour <= 7.9){
                     $reportClass->fee_student = $feestudent + (50 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 <= 11.9){
+                }elseif($finalhour <= 11.9){
                     $reportClass->fee_student = $feestudent + (45 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 >= 12){
+                }elseif($finalhour >= 12){
                     $reportClass->fee_student = $feestudent + (40 * $reportClass->total_hour_2);
                 }
 
             }elseif($classname_2->name == "Fardhu Ain Fizikal AQ"){
-                if($reportClass->total_hour_2 <= 7.9){
+                if($finalhour <= 7.9){
                     $reportClass->fee_student = $feestudent + (60 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 <= 11.9){
+                }elseif($finalhour <= 11.9){
                     $reportClass->fee_student = $feestudent + (55 * $reportClass->total_hour_2);
-                }elseif($reportClass->total_hour_2 >= 12){
+                }elseif($finalhour >= 12){
                     $reportClass->fee_student = $feestudent + (50 * $reportClass->total_hour_2);
                 }
 
-            }elseif($classname_2->name == "Al-Quran Online BQ"){
-                $reportClass->fee_student = $feestudent + (35 * $reportClass->total_hour_2);
-            }elseif($classname_2->name == "Al-Quran Online CQ"){
-                $reportClass->fee_student = $feestudent + (40 * $reportClass->total_hour_2);
-            }elseif($classname_2->name == "Fardhu Ain Online BQ"){
-                $reportClass->fee_student = $feestudent + (40 * $reportClass->total_hour_2);
-            }elseif($classname_2->name == "Al-Quran Fizikal BQ"){
-                $reportClass->fee_student = $feestudent + (50 * $reportClass->total_hour_2);
-            }elseif($classname_2->name == "Fardhu Ain Fizikal BQ"){
-                $reportClass->fee_student = $feestudent + (60 * $reportClass->total_hour_2);
-            }elseif($classname_2->name == "Fardhu Ain Online DQ"){
-                $reportClass->fee_student = $feestudent + (45 * $reportClass->total_hour_2);
             }elseif($classname_2->name == "Al-Quran Fizikal DQ"){
-                $reportClass->fee_student = $feestudent + (60 * $reportClass->total_hour_2);
+                if($finalhour <= 4.9){
+                    $reportClass->fee_student = $feestudent + (50 * $reportClass->total_hour_2);
+                }elseif($finalhour <= 8.9){
+                    $reportClass->fee_student = $feestudent + (45 * $reportClass->total_hour_2);
+                }elseif($finalhour >= 9){
+                    $reportClass->fee_student = $feestudent + (40 * $reportClass->total_hour_2);
+                }
+
             }elseif($classname_2->name == "Fardhu Ain Fizikal DQ"){
-                $reportClass->fee_student = $feestudent + (70 * $reportClass->total_hour_2);
+                if($finalhour <= 4.9){
+                    $reportClass->fee_student = $feestudent + (60 * $reportClass->total_hour_2);
+                }elseif($finalhour <= 8.9){
+                    $reportClass->fee_student = $feestudent + (55 * $reportClass->total_hour_2);
+                }elseif($finalhour >= 9){
+                    $reportClass->fee_student = $feestudent + (50 * $reportClass->total_hour_2);
+                }
+
+            }
+            
+            else{
+                $reportClass->fee_student = $feestudent + ($classname_2->feeperhour * $reportClass->total_hour_2);
             }
 
 
