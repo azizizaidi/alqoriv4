@@ -61,7 +61,7 @@ class ReportClassResource extends Resource
         return $form
         ->schema([
             Select::make('registrar_id')
-            ->label('Pendaftar')
+            ->label('Klien')
             ->options(function (Get $get) {
                 $options = AssignClassTeacher::whereRelation('teacher', 'teacher_id', 'LIKE', Auth::user()->id)
                     ->orderBy('assign_class_code', 'ASC')
@@ -119,8 +119,10 @@ class ReportClassResource extends Resource
 
              //   ->multiple(),
              Repeater::make('date')
+             ->label('Tarikh Kelas')
              ->schema([
-                DatePicker::make('date')->required(),
+                DatePicker::make('date')->required()
+                ->label('Tarikh Kelas'),
                 
              ])
              ->columns(2),
@@ -219,7 +221,7 @@ class ReportClassResource extends Resource
 
                  Repeater::make('date_2')
                  ->schema([
-                    DatePicker::make('date_2')->required(),
+                    DatePicker::make('date_2'),
                     
                  ])
                  ->columns(2),
