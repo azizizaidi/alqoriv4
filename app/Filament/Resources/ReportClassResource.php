@@ -320,11 +320,11 @@ class ReportClassResource extends Resource
                 
                 ->sortable()
                 ->searchable()
-                ->label('Nama Pendaftar'),
+                ->label('Nama Klien'),
                 TextColumn::make('registrar.code')
                 ->toggleable()
              
-                ->label('Kod Pendaftar')
+                ->label('Kod Klien')
                 ->searchable(),
                 TextColumn::make('month')
                 ->toggleable()
