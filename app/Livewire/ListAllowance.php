@@ -171,6 +171,9 @@ class ListAllowance extends Component implements HasForms, HasTable
                     '02-2024' => 'Februari 2024',
                     '03-2024' => 'Mac 2024',
                     '04-2024' => 'April 2024',
+                    '05-2024' => 'Mei 2024',
+                    '06-2024' => 'Jun 2024',
+                    '07-2024' => 'Julai 2024',
                 ]),
              
 
@@ -192,12 +195,15 @@ class ListAllowance extends Component implements HasForms, HasTable
                     BulkAction::make('edit')
                     ->icon('heroicon-o-pencil')
                     ->label('Ubah')
+                    ->visible(auth()->user()->hasRole(1))
+                   // ->can(fn (User $record) => auth()->user()->can('edit_allowance::report'))
                     ->modalSubheading()
                     ->action(function (array $data, Collection $records): void {
-                        // Handle bulk edit action
                         foreach ($records as $record) {
-                            $record->allowance_note = $data['allowance_note']; // Assign the value to the property
-                            $record->save();
+                            if (auth()->user()->hasRole(1)) {
+                                $record->allowance_note = $data['allowance_note'];
+                                $record->save();
+                            }
                         }
                     })
                     ->fillForm(function (Collection $records): array {
