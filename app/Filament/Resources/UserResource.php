@@ -39,6 +39,14 @@ class UserResource extends Resource
              ->label('Kod Ahli'),
              TextInput::make('email')
              ->label('ID Log Masuk'),
+             TextInput::make('password')
+             ->label('Kata Laluan Baru')
+             ->password()
+             ->dehydrateStateUsing(fn ($state) => !empty($state) ? bcrypt($state) : null)
+             ->required(fn ($livewire) => $livewire instanceof Pages\CreateUser)
+             ->revealable(),
+           //  ->visibleOn(Pages\EditUser::class)
+            // ->hiddenOn(Pages\EditUser::class),
             ]);
     }
 
