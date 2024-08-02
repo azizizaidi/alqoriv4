@@ -97,6 +97,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentRouteStatisticsPlugin::make(),
                 //...
             ])
+            //->favicon(asset('images/fav-2.png'))
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->authMiddleware([
                 Authenticate::class,
