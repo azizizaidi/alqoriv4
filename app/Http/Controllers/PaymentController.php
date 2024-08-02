@@ -23,7 +23,7 @@ class PaymentController extends Controller
             'billAmount'=>$report->fee_student * 100,
             'billReturnUrl'=> route('toyyibpay.paymentstatus', $report->id),
             'billCallbackUrl'=> route('toyyibpay.callback'),
-            'billExternalReferenceNo' => 'bill-4324',
+            'billExternalReferenceNo' => $report->id,
             'billTo'=>$report->registrar->name,
             'billEmail'=>'resityuranalqori@gmail.com',
             'billPhone'=>'0183879635',
@@ -34,7 +34,7 @@ class PaymentController extends Controller
             'billChargeToCustomer'=>1,
         );
 
-        $url = 'https://dev.toyyibpay.com/index.php/api/createBill';
+        $url = 'https://toyyibpay.com/index.php/api/createBill';
         $response = Http::asForm()->post($url, $some_data);
 
         if ($response->successful()) {
@@ -51,7 +51,7 @@ class PaymentController extends Controller
                 ->body('Bil Yuran Anda Berjaya Dibuat!')
                 ->send();
 
-            return redirect('https://dev.toyyibpay.com/' . $billCode);
+            return redirect('https://toyyibpay.com/' . $billCode);
         } else {
             Notification::make()
                 ->title('Bil Yuran Gagal Dibuat')
