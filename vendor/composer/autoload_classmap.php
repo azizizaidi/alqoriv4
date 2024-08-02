@@ -2094,6 +2094,7 @@ return array(
     'Filament\\Panel' => $vendorDir . '/filament/filament/src/Panel.php',
     'Filament\\PanelProvider' => $vendorDir . '/filament/filament/src/PanelProvider.php',
     'Filament\\PanelRegistry' => $vendorDir . '/filament/filament/src/PanelRegistry.php',
+    'Filament\\Panel\\Concerns\\CanGenerateResourceUrls' => $vendorDir . '/filament/filament/src/Panel/Concerns/CanGenerateResourceUrls.php',
     'Filament\\Panel\\Concerns\\HasAssets' => $vendorDir . '/filament/filament/src/Panel/Concerns/HasAssets.php',
     'Filament\\Panel\\Concerns\\HasAuth' => $vendorDir . '/filament/filament/src/Panel/Concerns/HasAuth.php',
     'Filament\\Panel\\Concerns\\HasAvatars' => $vendorDir . '/filament/filament/src/Panel/Concerns/HasAvatars.php',
