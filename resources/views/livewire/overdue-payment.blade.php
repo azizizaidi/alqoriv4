@@ -7,7 +7,7 @@
             <button
                 @click="showTabs = !showTabs"
                 class="bg-rose-500 text-white px-4 py-2 rounded "
-            >Tunjukkan/Sembuyikan Yuran Tertunggak</button>
+            >Tunjuk/Sembuyikan Yuran Tertunggak</button>
         </div>
 
         <!-- Tabs and Panels -->
