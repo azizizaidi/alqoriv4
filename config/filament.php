@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'layout' => [
+    // Other configuration options...
+    
+    'favicon' => asset('images/fav-2.png'),
+],
+
     'broadcasting' => [
 
         // 'echo' => [
