@@ -14,7 +14,7 @@ use Auth;
 class AssignClassTeacher extends Model
 {
     use SoftDeletes;
-    use MyClientTrait;
+  //  use MyClientTrait;
    //use MultiTenantModelTrait;
     use HasFactory;
 
