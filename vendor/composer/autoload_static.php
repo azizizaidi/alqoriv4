@@ -805,8 +805,8 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         ),
         'Filament\\' => 
         array (
-            0 => __DIR__ . '/..' . '/filament/filament/src',
-            1 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
+            0 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
+            1 => __DIR__ . '/..' . '/filament/filament/src',
         ),
         'Faker\\' => 
         array (
@@ -3096,6 +3096,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'Filament\\Panel' => __DIR__ . '/..' . '/filament/filament/src/Panel.php',
         'Filament\\PanelProvider' => __DIR__ . '/..' . '/filament/filament/src/PanelProvider.php',
         'Filament\\PanelRegistry' => __DIR__ . '/..' . '/filament/filament/src/PanelRegistry.php',
+        'Filament\\Panel\\Concerns\\CanGenerateResourceUrls' => __DIR__ . '/..' . '/filament/filament/src/Panel/Concerns/CanGenerateResourceUrls.php',
         'Filament\\Panel\\Concerns\\HasAssets' => __DIR__ . '/..' . '/filament/filament/src/Panel/Concerns/HasAssets.php',
         'Filament\\Panel\\Concerns\\HasAuth' => __DIR__ . '/..' . '/filament/filament/src/Panel/Concerns/HasAuth.php',
         'Filament\\Panel\\Concerns\\HasAvatars' => __DIR__ . '/..' . '/filament/filament/src/Panel/Concerns/HasAvatars.php',
