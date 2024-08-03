@@ -76,21 +76,21 @@ class UserResource extends Resource
                 
             ])
             ->filters([
-                Filter::make('email')
-                ->label('Emel kata Tidak Termasuk')
+             //   Filter::make('email')
+             //   ->label('Emel kata Tidak Termasuk')
               //  ->query(function (Builder $query) {
              //       $query->where('email', 'NOT LIKE', '%@gmail%');
              //   }),
                 
-                ->query(function (Builder $query, array $data) {
-                    $query->where('email', 'NOT LIKE', ['%' . $data['value'] . '%']);
-                })
-                ->form([
-                    TextInput::make('value')
-                        ->label('Email')
-                        ->placeholder('Search Email')
-                        ->required(),
-                ]),
+            //    ->query(function (Builder $query, array $data) {
+            //        $query->where('email', 'NOT LIKE', ['%' . $data['value'] . '%']);
+            //    })
+            //    ->form([
+             //       TextInput::make('value')
+             //           ->label('Email')
+             //           ->placeholder('Search Email')
+             //           ->required(),
+              //  ]),
         ])
             ->actions([
                 Tables\Actions\EditAction::make(),
