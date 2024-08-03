@@ -100,8 +100,9 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
                     ->formatStateUsing(fn($state) => match ($state) {
                         0 => 'Belum Bayar',
                         1 => 'Dah Bayar',
-                        2 => 'Dalam Proses',
+                        2 => 'Dalam Proses Transaksi',
                         3 => 'Gagal Bayar',
+                        4 => 'Dalam Proses',
                         default => 'Unknown',
                     })
                     ->color(fn(string $state): string => match ($state) {
@@ -109,6 +110,7 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
                         '1' => 'success',
                         '2' => 'warning',
                         '3' => 'info',
+                        '4' => 'gray',
                     }),
                 ImageColumn::make('receipt')
                     ->label('Resit')
@@ -122,8 +124,9 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
                     ->options([
                         0 => 'Belum Bayar',
                         1 => 'Dah Bayar',
-                        2 => 'Dalam Proses',
+                        2 => 'Dalam Proses Transaksi',
                         3 => 'Gagal Bayar',
+                        4 => 'Dalam Proses',
                     ]),
                 SelectFilter::make('month')
                     ->label('Bulan')
@@ -154,6 +157,9 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
                         '02-2024' => 'Februari 2024',
                         '03-2024' => 'Mac 2024',
                         '04-2024' => 'April 2024',
+                        '05-2024' => 'Mei 2024',
+                        '06-2024' => 'Jun 2024',
+                        '07-2024' => 'Julai 2024',
                     ]),
             ])
             ->actions([
