@@ -85,12 +85,11 @@ class UserResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     ExportBulkAction::make(),
-                    //Tables\Actions\DeleteBulkAction::make(),
                     BulkAction::make('delete')
-                    ->requiresConfirmation()
-                    ->label('Padam')
-                    ->action(fn (Collection $records) => $records->each->delete())
-                    ->icon('heroicon-s-trash'),
+                        ->requiresConfirmation()
+                        ->label('Padam')
+                        ->action(fn (Collection $records) => $records->each->delete())
+                        ->icon('heroicon-s-trash'),
                     BulkAction::make('assign_role')
                         ->icon('heroicon-o-pencil')
                         ->label('Assign Role')
@@ -105,9 +104,24 @@ class UserResource extends Resource
                                 ->label('Role')
                                 ->options(Role::all()->pluck('name', 'id'))
                                 ->required(),
-                        ])
+                        ]),
+                        BulkAction::make('email')
+                        ->icon('heroicon-s-clipboard-document-check')
+                        ->label('Append Text to Email')
+                        ->requiresConfirmation()
+                        ->action(function (array $data, Collection $records): void {
+                            $appendText = $data['append_text'];
+                            $records->each(function (User $user) use ($appendText) {
+                                $user->email = $user->email . $appendText;
+                                $user->save();
+                            });
+                        })
+                        ->form([
+                            TextInput::make('append_text')
+                                ->label('Text to Append')
+                                ->required(),
+                        ]),
                 ]),
-
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
