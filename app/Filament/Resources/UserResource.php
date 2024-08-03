@@ -127,7 +127,13 @@ class UserResource extends Resource
                         ->action(function (array $data, Collection $records): void {
                             $appendText = $data['append_text'];
                             $records->each(function (User $user) use ($appendText) {
-                                $user->email = $user->email . $appendText;
+                                $newEmail = $user->email . $appendText;
+                                $counter = 1;
+                                while (User::where('email', $newEmail)->exists()) {
+                                    $newEmail = $user->email . $appendText . $counter;
+                                    $counter++;
+                                }
+                                $user->email = $newEmail;
                                 $user->save();
                             });
                         })
