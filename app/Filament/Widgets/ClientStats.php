@@ -16,7 +16,7 @@ class ClientStats extends BaseWidget
            $feeFormatted = 'RM' . number_format($allowance, 2); // Format the allowance
 
            $sumfeeoverdue = ReportClass::where('registrar_id',auth()->id())
-                                        ->whereNotIn('month',['null','mar2022','apr2022'])
+                                        ->whereNotIn('month',['null','03-2022','04-2022'])
                                         ->where('status','!=',1)->sum('fee_student');
            $overdueFormatted = 'RM' . number_format( $sumfeeoverdue, 2);
  
