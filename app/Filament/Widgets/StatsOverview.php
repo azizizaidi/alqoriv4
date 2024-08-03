@@ -13,7 +13,7 @@ class StatsOverview extends BaseWidget
     {
 
           // Sum the allowance_amount for the specified month
-          $allowance = ReportClass::where('month', '06-2024')->sum('allowance');
+          $allowance = ReportClass::where('month', '07-2024')->sum('allowance');
           $allowanceFormatted = 'RM' . number_format($allowance, 2); // Format the allowance
 
           //$registrarId = Auth::id(); // Assuming you want to filter by the currently authenticated user
