@@ -47,7 +47,7 @@ use Closure;
 
 
 
-class ListYourClass extends Component implements HasForms, HasTable
+class ListClientClass extends Component implements HasForms, HasTable
 {
     use InteractsWithTable;
     use InteractsWithForms;
@@ -67,17 +67,11 @@ class ListYourClass extends Component implements HasForms, HasTable
 
 
             ])
-             ->query(fn () => AssignClassTeacher::query()->where('teacher_id', Auth::id()))
+             ->query(fn () => AssignClassTeacher::query()->where('registrar_id', Auth::id()))
             ->paginated([5,10, 25, 50, 100])
             ->columns([
 
                     TextColumn::make('id'),
-
-
-                    TextColumn::make('teacher.name')
-                    ->label('Nama Guru')
-                    ->toggleable(isToggledHiddenByDefault: true)
-                    ->searchable(isIndividual: true),
 
                     TextColumn::make('registrar.name')
                     ->label('Nama Klien')
@@ -89,6 +83,15 @@ class ListYourClass extends Component implements HasForms, HasTable
                     ->searchable()
                     ->toggleable(),
                 
+                    
+                    TextColumn::make('teacher.name')
+                    ->label('Nama Guru')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->searchable(isIndividual: true),
+
+                  
+
+                    
 
                     TextColumn::make('classes.name')
                     ->label('Kelas')

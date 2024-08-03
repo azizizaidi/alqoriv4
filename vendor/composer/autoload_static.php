@@ -173,7 +173,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         array (
             'Monolog\\' => 8,
             'Mockery\\' => 8,
-            'Miguilim\\FilamentAutoPanel\\' => 27,
             'Matrix\\' => 7,
             'Masterminds\\' => 12,
             'Maatwebsite\\Excel\\' => 18,
@@ -640,10 +639,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         array (
             0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
         ),
-        'Miguilim\\FilamentAutoPanel\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src',
-        ),
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
@@ -805,8 +800,8 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         ),
         'Filament\\' => 
         array (
-            0 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
-            1 => __DIR__ . '/..' . '/filament/filament/src',
+            0 => __DIR__ . '/..' . '/filament/filament/src',
+            1 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
         ),
         'Faker\\' => 
         array (
@@ -6196,24 +6191,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'Matrix\\Operators\\Multiplication' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Multiplication.php',
         'Matrix\\Operators\\Operator' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Operator.php',
         'Matrix\\Operators\\Subtraction' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Subtraction.php',
-        'Miguilim\\FilamentAutoPanel\\AutoAction' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/AutoAction.php',
-        'Miguilim\\FilamentAutoPanel\\AutoRelationManager' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/AutoRelationManager.php',
-        'Miguilim\\FilamentAutoPanel\\AutoResource' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/AutoResource.php',
-        'Miguilim\\FilamentAutoPanel\\Commands\\MakeAutoRelationManagerCommand' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Commands/MakeAutoRelationManagerCommand.php',
-        'Miguilim\\FilamentAutoPanel\\Commands\\MakeAutoResourceCommand' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Commands/MakeAutoResourceCommand.php',
-        'Miguilim\\FilamentAutoPanel\\Doctrine\\CustomMySQLSchemaManager' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Doctrine/CustomMySQLSchemaManager.php',
-        'Miguilim\\FilamentAutoPanel\\FilamentAutoPanelProvider' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/FilamentAutoPanelProvider.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceCreate' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceCreate.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceEdit' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceEdit.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceList' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceList.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceView' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceView.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\AbstractGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/AbstractGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\Concerns\\HasGeneratorHelpers' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/Concerns/HasGeneratorHelpers.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\FormGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/FormGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\InfolistGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/InfolistGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\TableGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/TableGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Mounters\\PageMounter' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Mounters/PageMounter.php',
-        'Miguilim\\FilamentAutoPanel\\Mounters\\RelationManagerMounter' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Mounters/RelationManagerMounter.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
