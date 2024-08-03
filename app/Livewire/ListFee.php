@@ -65,7 +65,7 @@ class ListFee extends Component implements HasForms, HasTable
 
 
             ])
-            ->query(function () use ($registrar_id) {
+            ->query(function (){
                 return ReportClass::with(['registrar', 'created_by'])
                    // ->where('registrar_id', $registrar_id)
                     ->whereNotIn('month', ['null', '02-2022','03-2022', '04-2022']);
