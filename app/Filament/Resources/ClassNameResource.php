@@ -2,35 +2,63 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\ClassNameResource\Pages;
+use App\Filament\Resources\ClassNameResource\RelationManagers;
 use App\Models\ClassName;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
 use Filament\Tables\Table;
-use Miguilim\FilamentAutoPanel\AutoResource;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 
-class ClassNameResource extends AutoResource
+class ClassNameResource extends Resource
 {
     protected static ?string $model = ClassName::class;
 
-    protected static ?string $navigationIcon = 'heroicon-m-table-cells';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static array $enumDictionary = [];
-
-    protected static array $visibleColumns = [ ];
-
-    protected static array $searchableColumns = [];
-
-    public static function getFilters(): array
+    public static function form(Form $form): Form
     {
-        return [
-            //
-        ];
+        return $form
+            ->schema([
+                //
+            ]);
     }
 
-    public static function getActions(): array
+    public static function table(Table $table): Table
     {
-        return [
-            //
-        ];
+        return $table
+            ->columns([
+                TextColumn::make('name')
+                ->label('Nama'),
+                TextColumn::make('feeperhour')
+                ->money('MYR')
+                ->label('Yuran Per Jam'),
+                TextColumn::make('allowanceperhour')
+                ->money('MYR')
+                ->label('Elaun Per Jam'),
+                TextColumn::make('created_at')
+                ->label('Tarikh Dibuat'),
+                TextColumn::make('updated_at')
+                ->label('Tarikh Dikemaskini'),
+                TextColumn::make('deleted_at')
+                ->label('Tarikh Dipadam'),
+
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getRelations(): array
@@ -40,61 +68,12 @@ class ClassNameResource extends AutoResource
         ];
     }
 
-    public static function getHeaderWidgets(): array
+    public static function getPages(): array
     {
         return [
-            'list' => [
-                //
-            ],
-            'view' => [
-                //
-            ],
-        ];
-    }
-
-    public static function getFooterWidgets(): array
-    {
-        return [
-            'list' => [
-                //
-            ],
-            'view' => [
-                //
-            ],
-        ];
-    }
-
-    public static function getColumnsOverwrite(): array
-    {
-        return [
-            'table' => [
-                TextColumn::make('name')
-                ->label('Nama'),
-                TextColumn::make('feeperhour')
-                ->label('Yuran Per Jam'),
-                TextColumn::make('allowanceperhour')
-                ->label('Elaun Per Jam'),
-                TextColumn::make('created_at')
-                ->label('Tarikh Dibuat'),
-                TextColumn::make('updated_at')
-                ->label('Tarikh Dikemaskini'),
-                TextColumn::make('deleted_at')
-                ->label('Tarikh Dipadam'),
-
-            ],
-            'form' => [
-                //
-            ],
-            'infolist' => [
-                //
-            ],
-        ];
-    }
-
-    public static function getExtraPages(): array
-    {
-        return [
-            //
+            'index' => Pages\ListClassNames::route('/'),
+            'create' => Pages\CreateClassName::route('/create'),
+            'edit' => Pages\EditClassName::route('/{record}/edit'),
         ];
     }
 
@@ -106,6 +85,6 @@ class ClassNameResource extends AutoResource
             return "Nama Kelas";
         }
         else
-           return "Class Name";
+           return "Nama Kelas";
     }
 }

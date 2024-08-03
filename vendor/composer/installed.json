@@ -5937,52 +5937,6 @@
             "install-path": "../maximebf/debugbar"
         },
         {
-            "name": "miguilim/filament-auto-panel",
-            "version": "1.4.4",
-            "version_normalized": "1.4.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/miguilimzero/filament-auto-panel.git",
-                "reference": "e0087102133396c004540d8484c612d6d57eb88f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/miguilimzero/filament-auto-panel/zipball/e0087102133396c004540d8484c612d6d57eb88f",
-                "reference": "e0087102133396c004540d8484c612d6d57eb88f",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": "^3.6",
-                "filament/filament": "^3.0",
-                "php": "^8.0"
-            },
-            "time": "2024-03-10T02:25:13+00:00",
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Miguilim\\FilamentAutoPanel\\FilamentAutoPanelProvider"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Miguilim\\FilamentAutoPanel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Construct your Filament panel Resources and Relation Managers at execution time like magic.",
-            "support": {
-                "issues": "https://github.com/miguilimzero/filament-auto-panel/issues",
-                "source": "https://github.com/miguilimzero/filament-auto-panel/tree/1.4.4"
-            },
-            "install-path": "../miguilim/filament-auto-panel"
-        },
-        {
             "name": "mockery/mockery",
             "version": "1.6.12",
             "version_normalized": "1.6.12.0",

@@ -14,11 +14,11 @@ return [
     |
     */
 
-    'layout' => [
+   // 'layout' => [
     // Other configuration options...
     
-    'favicon' => asset('images/fav-2.png'),
-],
+  //  'favicon' => asset('images/fav-2.png'),
+//],
 
     'broadcasting' => [
 
