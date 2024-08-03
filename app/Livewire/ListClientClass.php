@@ -119,11 +119,7 @@ class ListClientClass extends Component implements HasForms, HasTable
                     ExportBulkAction::make()
                     ->label('Eksport'),
                     //Tables\Actions\DeleteBulkAction::make(),
-                    BulkAction::make('delete')
-                    ->requiresConfirmation()
-                    ->label('Padam')
-                    ->action(fn (Collection $records) => $records->each->delete())
-                    ->icon('heroicon-s-trash'),
+                   
 
 
             ]);
