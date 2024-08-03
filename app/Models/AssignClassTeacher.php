@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\MyClientTrait;
+use App\Traits\YourClassTrait;
 //use App\Traits\MultiTenantModelTrait;
 use Auth;
 
 class AssignClassTeacher extends Model
 {
     use SoftDeletes;
-    use MyClientTrait;
+    //use MyClientTrait;
+    //use YourClassTrait;
    //use MultiTenantModelTrait;
     use HasFactory;
 

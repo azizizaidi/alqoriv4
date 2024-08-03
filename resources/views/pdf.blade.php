@@ -188,7 +188,7 @@
     <div class="invoice-box">
         <div class="header">
             <div class="brand-logo">
-                <img src="{{ asset('storage/livewire-tmp/logo.jpg') }}" alt="Brand Logo">
+                <img src="{{ public_path('images/logo.jpg') }}" alt="Brand Logo">
             </div>
             <div class="invoice-title">INVOIS</div>
         </div>

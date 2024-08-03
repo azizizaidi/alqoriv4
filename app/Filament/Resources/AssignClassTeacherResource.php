@@ -48,7 +48,7 @@ class AssignClassTeacherResource extends Resource
                     ->label('Klien')
                     ->options(function (Get $get) {
                         $options = User::whereRelation('roles','id', 'like', '%'.'4'.'%')
-                                    ->pluck('name', 'id');
+                                   -> pluck('name', 'id');
 
                        // dd($options); // Dump and die to debug the options
 
@@ -121,6 +121,8 @@ class AssignClassTeacherResource extends Resource
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
             ]);
+
+           
     }
 
     public static function getRelations(): array

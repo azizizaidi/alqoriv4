@@ -173,7 +173,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         array (
             'Monolog\\' => 8,
             'Mockery\\' => 8,
-            'Miguilim\\FilamentAutoPanel\\' => 27,
             'Matrix\\' => 7,
             'Masterminds\\' => 12,
             'Maatwebsite\\Excel\\' => 18,
@@ -640,10 +639,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         array (
             0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
         ),
-        'Miguilim\\FilamentAutoPanel\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src',
-        ),
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
@@ -805,8 +800,8 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         ),
         'Filament\\' => 
         array (
-            0 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
-            1 => __DIR__ . '/..' . '/filament/filament/src',
+            0 => __DIR__ . '/..' . '/filament/filament/src',
+            1 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
         ),
         'Faker\\' => 
         array (
@@ -1059,6 +1054,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Filament\\Pages\\AddClass' => __DIR__ . '/../..' . '/app/Filament/Pages/AddClass.php',
         'App\\Filament\\Pages\\Allowance' => __DIR__ . '/../..' . '/app/Filament/Pages/Allowance.php',
         'App\\Filament\\Pages\\CalculatorFee' => __DIR__ . '/../..' . '/app/Filament/Pages/CalculatorFee.php',
+        'App\\Filament\\Pages\\ClientClass' => __DIR__ . '/../..' . '/app/Filament/Pages/ClientClass.php',
         'App\\Filament\\Pages\\Dashboard' => __DIR__ . '/../..' . '/app/Filament/Pages/Dashboard.php',
         'App\\Filament\\Pages\\FeeStudent' => __DIR__ . '/../..' . '/app/Filament/Pages/FeeStudent.php',
         'App\\Filament\\Pages\\Information' => __DIR__ . '/../..' . '/app/Filament/Pages/Information.php',
@@ -1076,6 +1072,9 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Filament\\Resources\\AssignClassTeacherResource\\Pages\\ListAssignClassTeachers' => __DIR__ . '/../..' . '/app/Filament/Resources/AssignClassTeacherResource/Pages/ListAssignClassTeachers.php',
         'App\\Filament\\Resources\\AssignClassTeacherResource\\RelationManagers\\UsersRelationManager' => __DIR__ . '/../..' . '/app/Filament/Resources/AssignClassTeacherResource/RelationManagers/UsersRelationManager.php',
         'App\\Filament\\Resources\\ClassNameResource' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassNameResource.php',
+        'App\\Filament\\Resources\\ClassNameResource\\Pages\\CreateClassName' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassNameResource/Pages/CreateClassName.php',
+        'App\\Filament\\Resources\\ClassNameResource\\Pages\\EditClassName' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassNameResource/Pages/EditClassName.php',
+        'App\\Filament\\Resources\\ClassNameResource\\Pages\\ListClassNames' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassNameResource/Pages/ListClassNames.php',
         'App\\Filament\\Resources\\ClassPackageResource' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassPackageResource.php',
         'App\\Filament\\Resources\\ClassPackageResource\\Pages\\CreateClassPackage' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassPackageResource/Pages/CreateClassPackage.php',
         'App\\Filament\\Resources\\ClassPackageResource\\Pages\\EditClassPackage' => __DIR__ . '/../..' . '/app/Filament/Resources/ClassPackageResource/Pages/EditClassPackage.php',
@@ -1116,6 +1115,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Livewire\\ComingSoon' => __DIR__ . '/../..' . '/app/Livewire/ComingSoon.php',
         'App\\Livewire\\InvoiceView' => __DIR__ . '/../..' . '/app/Livewire/InvoiceView.php',
         'App\\Livewire\\ListAllowance' => __DIR__ . '/../..' . '/app/Livewire/ListAllowance.php',
+        'App\\Livewire\\ListClientClass' => __DIR__ . '/../..' . '/app/Livewire/ListClientClass.php',
         'App\\Livewire\\ListFee' => __DIR__ . '/../..' . '/app/Livewire/ListFee.php',
         'App\\Livewire\\ListMonthlyFee' => __DIR__ . '/../..' . '/app/Livewire/ListMonthlyFee.php',
         'App\\Livewire\\ListMyClients' => __DIR__ . '/../..' . '/app/Livewire/ListMyClients.php',
@@ -1172,6 +1172,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Traits\\MultiTenantModelTrait' => __DIR__ . '/../..' . '/app/Traits/MultiTenantModelTrait.php',
         'App\\Traits\\MultiTenantModelTraitRegistrar' => __DIR__ . '/../..' . '/app/Traits/MultiTenantModelTraitRegistrar.php',
         'App\\Traits\\MyClientTrait' => __DIR__ . '/../..' . '/app/Traits/MyClientTrait.php',
+        'App\\Traits\\YourClassTrait' => __DIR__ . '/../..' . '/app/Traits/YourClassTrait.php',
         'Ariaieboy\\FilamentCurrency\\FilamentCurrencyServiceProvider' => __DIR__ . '/..' . '/ariaieboy/filament-currency/src/FilamentCurrencyServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Awcodes\\FilamentBadgeableColumn\\BadgeableColumnServiceProvider' => __DIR__ . '/..' . '/awcodes/filament-badgeable-column/src/BadgeableColumnServiceProvider.php',
@@ -6196,24 +6197,6 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'Matrix\\Operators\\Multiplication' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Multiplication.php',
         'Matrix\\Operators\\Operator' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Operator.php',
         'Matrix\\Operators\\Subtraction' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Subtraction.php',
-        'Miguilim\\FilamentAutoPanel\\AutoAction' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/AutoAction.php',
-        'Miguilim\\FilamentAutoPanel\\AutoRelationManager' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/AutoRelationManager.php',
-        'Miguilim\\FilamentAutoPanel\\AutoResource' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/AutoResource.php',
-        'Miguilim\\FilamentAutoPanel\\Commands\\MakeAutoRelationManagerCommand' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Commands/MakeAutoRelationManagerCommand.php',
-        'Miguilim\\FilamentAutoPanel\\Commands\\MakeAutoResourceCommand' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Commands/MakeAutoResourceCommand.php',
-        'Miguilim\\FilamentAutoPanel\\Doctrine\\CustomMySQLSchemaManager' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Doctrine/CustomMySQLSchemaManager.php',
-        'Miguilim\\FilamentAutoPanel\\FilamentAutoPanelProvider' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/FilamentAutoPanelProvider.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceCreate' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceCreate.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceEdit' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceEdit.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceList' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceList.php',
-        'Miguilim\\FilamentAutoPanel\\Filament\\Pages\\FilamentAutoResourceView' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Filament/Pages/FilamentAutoResourceView.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\AbstractGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/AbstractGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\Concerns\\HasGeneratorHelpers' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/Concerns/HasGeneratorHelpers.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\FormGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/FormGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\InfolistGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/InfolistGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Generators\\TableGenerator' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Generators/TableGenerator.php',
-        'Miguilim\\FilamentAutoPanel\\Mounters\\PageMounter' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Mounters/PageMounter.php',
-        'Miguilim\\FilamentAutoPanel\\Mounters\\RelationManagerMounter' => __DIR__ . '/..' . '/miguilim/filament-auto-panel/src/Mounters/RelationManagerMounter.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
