@@ -6,7 +6,7 @@ use Filament\Pages\Page;
 
 class AddClass extends Page
 {
-    protected static ?string $navigationIcon = 'fluentui-book-add-24-o';
+    protected static ?string $navigationIcon = 'mdi-google-classroom';
 
     protected static string $view = 'filament.pages.add-class';
 
