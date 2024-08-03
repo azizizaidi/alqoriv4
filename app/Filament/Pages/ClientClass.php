@@ -8,7 +8,7 @@ class ClientClass extends Page
 {
     protected static ?string $navigationIcon = 'mdi-google-classroom';
 
-    protected static string $view = 'filament.pages.teacher-class';
+    protected static string $view = 'filament.pages.client-class';
 
     public static function table(Table $table): Table
     {
