@@ -86,7 +86,7 @@ class ListClientClass extends Component implements HasForms, HasTable
                     
                     TextColumn::make('teacher.name')
                     ->label('Nama Guru')
-                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->toggleable()
                     ->searchable(isIndividual: true),
 
                   
@@ -133,7 +133,7 @@ class ListClientClass extends Component implements HasForms, HasTable
 
     public function render(): View
     {
-        return view('livewire.list-your-class');
+        return view('livewire.list-client-class');
     }
 
 
