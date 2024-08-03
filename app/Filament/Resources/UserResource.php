@@ -13,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Forms\Components\Select;
@@ -75,8 +76,22 @@ class UserResource extends Resource
                 
             ])
             ->filters([
-                //
-            ])
+                Filter::make('email')
+                ->label('Emel kata Tidak Termasuk')
+              //  ->query(function (Builder $query) {
+             //       $query->where('email', 'NOT LIKE', '%@gmail%');
+             //   }),
+                
+                ->query(function (Builder $query, array $data) {
+                    $query->where('email', 'NOT LIKE', ['%' . $data['value'] . '%']);
+                })
+                ->form([
+                    TextInput::make('value')
+                        ->label('Email')
+                        ->placeholder('Search Email')
+                        ->required(),
+                ]),
+        ])
             ->actions([
                 Tables\Actions\EditAction::make(),
               
