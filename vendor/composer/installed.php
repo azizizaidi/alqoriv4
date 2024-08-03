@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '22b0594e6bb492e9cc8160b8780f3187242e7377',
+        'reference' => '37a2c1fb91d131246e8fa17d5033b6cd4ca25c71',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -760,7 +760,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '22b0594e6bb492e9cc8160b8780f3187242e7377',
+            'reference' => '37a2c1fb91d131246e8fa17d5033b6cd4ca25c71',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -954,15 +954,6 @@
             'install_path' => __DIR__ . '/../maximebf/debugbar',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'miguilim/filament-auto-panel' => array(
-            'pretty_version' => '1.4.4',
-            'version' => '1.4.4.0',
-            'reference' => 'e0087102133396c004540d8484c612d6d57eb88f',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../miguilim/filament-auto-panel',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
             'pretty_version' => '1.6.12',

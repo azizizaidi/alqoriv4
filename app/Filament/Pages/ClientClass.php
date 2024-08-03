@@ -4,11 +4,11 @@ namespace App\Filament\Pages;
 
 use Filament\Pages\Page;
 
-class AddClass extends Page
+class ClientClass extends Page
 {
     protected static ?string $navigationIcon = 'mdi-google-classroom';
 
-    protected static string $view = 'filament.pages.add-class';
+    protected static string $view = 'filament.pages.client-class';
 
     public static function table(Table $table): Table
     {
@@ -20,18 +20,16 @@ class AddClass extends Page
     
     public static function getNavigationLabel(): string
     {
-        return __('Tambah Kelas');
+        return __('Guru Kelas');
     }
     
     public function getHeading(): string
     {
-        return __('Tambah Kelas');
+        return __('Guru Kelas');
     }
 
     public static function canAccess(): bool
     {
-        return auth()->user()->can('view_any_add_class');
+        return auth()->user()->can('view_teacher_class');
     }
-
-    
 }

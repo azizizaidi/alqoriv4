@@ -13,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Forms\Components\Select;
@@ -63,7 +64,8 @@ class UserResource extends Resource
                 ->label('Kod Ahli')
                 ->searchable(isIndividual: true),
                 TextColumn::make('roles.name')
-                ->label('Peranan'),
+                ->label('Peranan')
+                ->searchable(isIndividual: true),
                 TextColumn::make('email')
                 ->label('ID Log Masuk')
                 ->searchable(isIndividual: true),
@@ -74,8 +76,22 @@ class UserResource extends Resource
                 
             ])
             ->filters([
-                //
-            ])
+             //   Filter::make('email')
+             //   ->label('Emel kata Tidak Termasuk')
+              //  ->query(function (Builder $query) {
+             //       $query->where('email', 'NOT LIKE', '%@gmail%');
+             //   }),
+                
+            //    ->query(function (Builder $query, array $data) {
+            //        $query->where('email', 'NOT LIKE', ['%' . $data['value'] . '%']);
+            //    })
+            //    ->form([
+             //       TextInput::make('value')
+             //           ->label('Email')
+             //           ->placeholder('Search Email')
+             //           ->required(),
+              //  ]),
+        ])
             ->actions([
                 Tables\Actions\EditAction::make(),
               
@@ -84,12 +100,11 @@ class UserResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     ExportBulkAction::make(),
-                    //Tables\Actions\DeleteBulkAction::make(),
                     BulkAction::make('delete')
-                    ->requiresConfirmation()
-                    ->label('Padam')
-                    ->action(fn (Collection $records) => $records->each->delete())
-                    ->icon('heroicon-s-trash'),
+                        ->requiresConfirmation()
+                        ->label('Padam')
+                        ->action(fn (Collection $records) => $records->each->delete())
+                        ->icon('heroicon-s-trash'),
                     BulkAction::make('assign_role')
                         ->icon('heroicon-o-pencil')
                         ->label('Assign Role')
@@ -104,9 +119,30 @@ class UserResource extends Resource
                                 ->label('Role')
                                 ->options(Role::all()->pluck('name', 'id'))
                                 ->required(),
-                        ])
+                        ]),
+                        BulkAction::make('email')
+                        ->icon('heroicon-s-clipboard-document-check')
+                        ->label('Append Text to Email')
+                        ->requiresConfirmation()
+                        ->action(function (array $data, Collection $records): void {
+                            $appendText = $data['append_text'];
+                            $records->each(function (User $user) use ($appendText) {
+                                $newEmail = $user->email . $appendText;
+                                $counter = 1;
+                                while (User::where('email', $newEmail)->exists()) {
+                                    $newEmail = $user->email . $appendText . $counter;
+                                    $counter++;
+                                }
+                                $user->email = $newEmail;
+                                $user->save();
+                            });
+                        })
+                        ->form([
+                            TextInput::make('append_text')
+                                ->label('Text to Append')
+                                ->required(),
+                        ]),
                 ]),
-
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
