@@ -62,6 +62,7 @@ class ReportClassResource extends Resource
         ->schema([
             Select::make('registrar_id')
             ->label('Klien')
+            ->required()
             ->options(function (Get $get) {
                 $options = AssignClassTeacher::whereRelation('teacher', 'teacher_id', 'LIKE', Auth::user()->id)
                     ->orderBy('assign_class_code', 'ASC')
@@ -91,6 +92,7 @@ class ReportClassResource extends Resource
 
             Select::make('class_names_id')
                 ->label('Nama Kelas')
+                ->required()
                 ->options(function (Get $get) {
                     $registrarId = $get('registrar_id');
 
@@ -129,6 +131,7 @@ class ReportClassResource extends Resource
 
                 Select::make('total_hour')
                 ->label('Jumlah Jam Kelas Sebulan')
+                ->required()
                  ->options([
                     '0' => '0 jam',
                     '0.5' => '30 minit',
@@ -328,9 +331,13 @@ class ReportClassResource extends Resource
                 ->searchable(),
                 TextColumn::make('month')
                 ->toggleable()
-              
                 ->label('Bulan')
                 ->searchable(),
+                TextColumn::make('allowance')
+                ->toggleable()
+                ->currency('MYR')
+                ->label('Elaun'),
+                
                 TextColumn::make('date')
                 ->toggleable()
                
