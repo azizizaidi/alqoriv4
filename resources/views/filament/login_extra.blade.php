@@ -3,7 +3,7 @@
 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
 <h3 id="">Bagi Ahli yang tidak pakai emel untuk Id Pengguna, sila tambah '@alqori' selepas masukkan no ic/nama yang telah digunakan sebelum ni.</h3>
 <br>
-<h3>Contoh:879485273@alqori/ahmad@alqori</h3>
+<h3>Contoh:879485273@alqori</h3>
   <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
     </span>
 </div>
