@@ -332,6 +332,7 @@ class ReportClassResource extends Resource
                 ->searchable(),
                 TextColumn::make('allowance')
                 ->toggleable()
+                ->currency('MYR')
                 ->label('Elaun'),
                 
                 TextColumn::make('date')
