@@ -328,9 +328,12 @@ class ReportClassResource extends Resource
                 ->searchable(),
                 TextColumn::make('month')
                 ->toggleable()
-              
                 ->label('Bulan')
                 ->searchable(),
+                TextColumn::make('allowance')
+                ->toggleable()
+                ->label('Elaun'),
+                
                 TextColumn::make('date')
                 ->toggleable()
                
