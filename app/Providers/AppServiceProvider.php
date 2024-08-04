@@ -13,7 +13,9 @@ use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 use App\Models\User;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentColor;
-
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Support\Facades\Blade;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -55,6 +57,12 @@ class AppServiceProvider extends ServiceProvider
             'success' => Color::Green,
             'warning' => Color::Amber,
         ]);
+
+  //      FilamentView::registerRenderHook(
+    //        PanelsRenderHook::AUTH_LOGIN_FORM_AFTER,
+      //      fn (): View => view('filament.login_extra')
+      //  );
+
        
     }
 }

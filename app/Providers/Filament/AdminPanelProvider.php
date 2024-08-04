@@ -91,8 +91,16 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
        
-          
-
+            //->brandName('i-ALQORI')
+    ->colors([
+        'primary' => '#e53e3e', // Set your choice of colors
+    ])
+    ->renderHook(
+      
+            'panels::auth.login.form.after',
+            fn () => view('filament.login_extra')
+        
+    )
             ->plugins([
                 FilamentRouteStatisticsPlugin::make(),
                 //...
