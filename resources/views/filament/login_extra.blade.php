@@ -2,17 +2,18 @@
 
 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
 <h3 id="">Bagi Ahli yang tidak pakai emel untuk Id Pengguna, sila tambah '@alqori' selepas masukkan no ic/nama yang telah digunakan sebelum ni.</h3>
-
+<br>
+<h3>Contoh:879485273@alqori/ahmad@alqori</h3>
   <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
     </span>
 </div>
 <style>
 body {
-    background: #e6dfdf !important; /* Deep pink */
+    background: #c9c3c3 !important; /* Deep pink */
     
 }
 
-
+@media screen and (min-width: 1024px) {
     main {
         position: absolute; 
     }
@@ -51,7 +52,7 @@ body {
         font-weight: bold;
         text-shadow: #b71c1c 2px 2px 5px;
     }*/
-
+}
 
 .bg-red-100 {
     background-color: #fce4ec; /* Light pink */
