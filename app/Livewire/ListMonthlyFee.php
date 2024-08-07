@@ -210,4 +210,5 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
             ->duration(5000)
             ->send();
     }
+    //end
 }
