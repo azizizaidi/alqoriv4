@@ -22,7 +22,7 @@ class InvoiceView extends Component
         $registrar_id =auth()->id();
         $recordId = $request->query('id'); //->where('registrar_id', $registrar_id);
         $this->record = ReportClass::find($recordId);
-       return dd($recordId,$this->record);
+     //  return dd($recordId,$this->record);
 
         // Handle the case where the record is not found, if needed
 
