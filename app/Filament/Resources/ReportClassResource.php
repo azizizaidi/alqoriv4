@@ -306,6 +306,7 @@ class ReportClassResource extends Resource
                     ->label('Nama Klien'),
                     
             ])
+            ->query(ReportClass::query()->orderBy('created_at', 'desc'))
             ->paginated([5,10, 25, 50, 100])
             ->columns([
                 TextColumn::make('id')

@@ -68,7 +68,8 @@ class ListFee extends Component implements HasForms, HasTable
             ->query(function (){
                 return ReportClass::with(['registrar', 'created_by'])
                    // ->where('registrar_id', $registrar_id)
-                    ->whereNotIn('month', ['null', '02-2022','03-2022', '04-2022']);
+                    ->whereNotIn('month', ['null', '02-2022','03-2022', '04-2022'])
+                    ->orderBy('created_at', 'desc');
             })
             ->paginated([5,10, 25, 50, 100])
             ->columns([
@@ -105,21 +106,33 @@ class ListFee extends Component implements HasForms, HasTable
                     TextColumn::make('note')
                     ->label('Nota')
                     ->toggleable(isToggledHiddenByDefault: true),
-                    TextColumn::make('status')
-                ->badge()
-                ->label('Status') // Optional: Add a label for the column header
-                ->formatStateUsing(fn ($state) => match ($state) {
-                    0 => 'Belum Bayar',
+          //          TextColumn::make('status')
+         //       ->badge()
+         //       ->label('Status') // Optional: Add a label for the column header
+          //      ->formatStateUsing(fn ($state) => match ($state) {
+          //          0 => 'Belum Bayar',
 
-                    1 => 'Dah Bayar',
+        //            1 => 'Dah Bayar',
 
-                    2 => 'Dalam Proses Transaksi',
+          //          2 => 'Dalam Proses Transaksi',
 
-                    3 => 'Gagal Bayar',
+            //        3 => 'Gagal Bayar',
 
-                    4 => 'Dalam Proses',
-                    default => 'Unknown',
-                })
+          //          4 => 'Dalam Proses',
+         //           default => 'Unknown',
+         //
+         //       })
+         IconColumn::make('status')
+         ->icon(fn (string $state): string => match ($state) {
+            '0' => 'far-times-circle',
+           '1' => 'si-ticktick',
+           '2' => 'fas-hand-holding-usd',
+           '3' => 'elemplus-failed',
+           '4' => 'heroicon-m-arrow-uturn-left',
+             
+            
+         })
+                   
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'danger',
                     '1' => 'success',
@@ -198,10 +211,18 @@ class ListFee extends Component implements HasForms, HasTable
 
             ])
             ->actions([
-                Action::make('invois')
-                       ->icon('heroicon-s-eye')
-                       ->color('success')
-                       ->url(fn (ReportClass $record): string => route('filament.admin.pages.invoices', ['id' => $record])),
+                Action::make('pdf')
+                ->label('Invois')
+                ->color('danger')
+                ->icon('heroicon-c-clipboard-document-list')
+                ->action(function(ReportClass $record) {
+                    $this->finalhour = $record->total_hour + ($record->total_hour_2 ?? 0); // Calculate finalhour
+                    return response()->streamDownload(function () use ($record) {
+                        echo Pdf::loadHtml(
+                            Blade::render('pdf', ['value' => $record, 'finalhour' => $this->finalhour])
+                        )->stream();
+                    }, $record->number . '.pdf');
+                }),
                Action::make('bayar')
                        ->icon('heroicon-m-credit-card')
                        ->color('danger')
@@ -230,12 +251,12 @@ class ListFee extends Component implements HasForms, HasTable
 
                                 4 => 'Dalam Proses',
 
-                            ])
-                               ->required(),
+                               ]),
+                              // ->required(),
                                FileUpload::make('receipt')
                                ->image()
                                ->label('Resit')
-                               ->required()
+                            //   ->required()
 
                                ->disk('public')
                                ->directory('livewire-tmp')

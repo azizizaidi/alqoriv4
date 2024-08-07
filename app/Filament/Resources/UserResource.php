@@ -38,6 +38,8 @@ class UserResource extends Resource
              ->label('Nama'),
              TextInput::make('code')
              ->label('Kod Ahli'),
+             TextInput::make('phone')
+             ->label('No.Tel'),
              TextInput::make('email')
              ->label('ID Log Masuk'),
              TextInput::make('password')
@@ -60,6 +62,10 @@ class UserResource extends Resource
                 TextColumn::make('name')
                 ->label('Nama')
                 ->searchable(),
+                TextColumn::make('phone')
+                ->label('No.Tel')
+                ->searchable(isIndividual: true),
+             
                 TextColumn::make('code')
                 ->label('Kod Ahli')
                 ->searchable(isIndividual: true),
