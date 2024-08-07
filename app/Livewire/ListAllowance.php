@@ -83,7 +83,7 @@ class ListAllowance extends Component implements HasForms, HasTable
                         ->button()
                         ->label('Kumpulan'),
                 )
-            ->query(ReportClass::query())
+            ->query(ReportClass::query()->orderBy('created_at', 'desc'))
             ->paginated([5,10, 25, 50, 100])
             ->deferLoading()
             ->columns([
@@ -111,18 +111,24 @@ class ListAllowance extends Component implements HasForms, HasTable
                     ->summarize(Sum::make()->money('MYR'))
                     ->toggleable(),
 
-                    TextColumn::make('allowance_note')
-                ->badge()
-                ->label('Status Elaun') // Optional: Add a label for the column header
-                ->formatStateUsing(fn ($state) => match ($state) {
-                    'dah_bayar' => 'Dah Bayar',
+             //       TextColumn::make('allowance_note')
+          //      ->badge()
+           //     ->label('Status Elaun') // Optional: Add a label for the column header
+           //     ->formatStateUsing(fn ($state) => match ($state) {
+            //        'dah_bayar' => 'Dah Bayar',
 
-                    'belum_bayar' => 'Belum Bayar',
+            //        'belum_bayar' => 'Belum Bayar',
 
-                    'NULL'  => 'Tiada Data',
+             //       'NULL'  => 'Tiada Data',
 
                    
-                })
+           //     })
+           IconColumn::make('allowance_note')
+    ->icon(fn (string $state): string => match ($state) {
+        'dah_bayar' => 'si-ticktick',
+        'belum_bayar' => 'far-times-circle',
+       
+    })
                 ->color(fn (string $state): string => match ($state) {
                     'dah_bayar' => 'success',
                     'belum_bayar' => 'danger',
@@ -139,6 +145,16 @@ class ListAllowance extends Component implements HasForms, HasTable
             //->groupsOnly()
     
             ->filters([
+                SelectFilter::make('allowance_note')
+                ->label('Elaun Status')
+                ->options([
+                    'dah_bayar' => 'Dah Bayar',
+
+                    'belum_bayar' => 'Belum Bayar',
+
+                  
+
+                ]),
                 SelectFilter::make('month')
                 ->label('Bulan')
                 ->searchable()
