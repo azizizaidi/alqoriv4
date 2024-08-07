@@ -64,7 +64,8 @@ class ListMonthlyFee extends Component implements HasForms, HasTable
             ->query(function () use ($registrar_id) {
                 return ReportClass::with(['registrar', 'created_by'])
                     ->where('registrar_id', $registrar_id)
-                    ->whereNotIn('month', ['null', '02-2022','03-2022', '04-2022']);
+                    ->whereNotIn('month', ['null', '02-2022','03-2022', '04-2022'])
+                    ->orderBy('created_at', 'desc');
             })
             ->paginated([5, 10, 25, 50, 100])
             ->columns([
