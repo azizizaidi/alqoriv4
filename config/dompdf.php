@@ -104,7 +104,7 @@ return array(
         /**
          * Whether to enable font subsetting or not.
          */
-        "enable_font_subsetting" => false,
+        "enable_font_subsetting" => true,
 
         /**
          * The PDF rendering backend to use
@@ -245,7 +245,7 @@ return array(
          *
          * @var bool
          */
-        "enable_javascript" => true,
+        "enable_javascript" => false,
 
         /**
          * Enable remote file access
