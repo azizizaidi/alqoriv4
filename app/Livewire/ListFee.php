@@ -215,14 +215,27 @@ class ListFee extends Component implements HasForms, HasTable
                 ->label('Invois')
                 ->color('danger')
                 ->icon('heroicon-c-clipboard-document-list')
-                ->action(function(ReportClass $record) {
+                ->action(function (ReportClass $record) {
                     $this->finalhour = $record->total_hour + ($record->total_hour_2 ?? 0); // Calculate finalhour
-                    return response()->streamDownload(function () use ($record) {
-                        echo Pdf::loadHtml(
-                            Blade::render('pdf', ['value' => $record, 'finalhour' => $this->finalhour])
-                        )->stream();
-                    }, $record->number . '.pdf');
+            
+                    $pdf = Pdf::loadHtml(
+                        Blade::render('pdf', ['value' => $record, 'finalhour' => $this->finalhour])
+                    );
+            
+                    // Define the filename as "invois" followed by the record number
+                    $filename = 'invois' . $record->id . '.pdf';
+            
+                    return response()->streamDownload(function () use ($pdf) {
+                        echo $pdf->output();
+                    }, $filename, [
+                        'Content-Type' => 'application/pdf',
+                        'Content-Disposition' => 'attachment; filename="' . $filename . '"',
+                        'Cache-Control' => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+                        'Pragma' => 'no-cache',
+                        'Expires' => '0',
+                    ]);
                 }),
+            
                Action::make('bayar')
                        ->icon('heroicon-m-credit-card')
                        ->color('danger')
