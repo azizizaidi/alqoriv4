@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invois</title>
     <style>
@@ -217,6 +218,7 @@
             @endphp
             <tr>
             @if($value->class_name_2 == NULL)
+       
                 <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $key + 1 }}</td>
                 <td class="left-align" style="padding: 12px; line-height: 20px;">{{ $value->class_name->name ?? '' }}</td>
                 <td class="center-align" style="padding: 12px; line-height: 20px;">{{ $finalhour ?? '' }}</td>
