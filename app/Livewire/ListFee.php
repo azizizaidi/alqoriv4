@@ -222,11 +222,14 @@ class ListFee extends Component implements HasForms, HasTable
                         Blade::render('pdf', ['value' => $record, 'finalhour' => $this->finalhour])
                     );
             
+                    // Define the filename as "invois" followed by the record number
+                    $filename = 'invois' . $record->id . '.pdf';
+            
                     return response()->streamDownload(function () use ($pdf) {
                         echo $pdf->output();
-                    }, $record->number . '.pdf', [
+                    }, $filename, [
                         'Content-Type' => 'application/pdf',
-                        'Content-Disposition' => 'attachment; filename="' . $record->number . '.pdf"',
+                        'Content-Disposition' => 'attachment; filename="' . $filename . '"',
                         'Cache-Control' => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
                         'Pragma' => 'no-cache',
                         'Expires' => '0',
