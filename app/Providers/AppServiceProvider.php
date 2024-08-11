@@ -55,7 +55,7 @@ class AppServiceProvider extends ServiceProvider
             'info' => Color::Blue,
             'primary' => Color::Amber,
             'success' => Color::Green,
-            'warning' => Color::Amber,
+            'warning' => '#f019f0',
         ]);
 
   //      FilamentView::registerRenderHook(
