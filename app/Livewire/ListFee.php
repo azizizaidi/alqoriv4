@@ -10,6 +10,7 @@ use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -83,12 +84,12 @@ class ListFee extends Component implements HasForms, HasTable
                     ->searchable(isIndividual: true),
 
                     TextColumn::make('registrar.name')
-                    ->label('Nama Pendaftar')
+                    ->label('Nama Klien')
                     ->toggleable()
                     ->searchable(isIndividual: true),
 
                     TextColumn::make('registrar.code')
-                    ->label('Kod Pendaftar')
+                    ->label('Kod Klien')
                     ->searchable()
                     ->toggleable(),
                      TextColumn::make('registrar.phone')
@@ -273,13 +274,14 @@ class ListFee extends Component implements HasForms, HasTable
 
                                ]),
                               // ->required(),
-                               FileUpload::make('receipt')
+                              // FileUpload::make('receipt')
+                               SpatieMediaLibraryFileUpload::make('receipt')
                                ->image()
                                ->label('Resit')
                             //   ->required()
 
                                ->disk('public')
-                               ->directory('livewire-tmp')
+                               ->directory('images')
                                ->visibility('public')
                                //->storeFiles(false)
                                 ->downloadable()
