@@ -130,6 +130,7 @@ class ListFee extends Component implements HasForms, HasTable
            '2' => 'fas-hand-holding-usd',
            '3' => 'elemplus-failed',
            '4' => 'heroicon-m-arrow-uturn-left',
+           '5' => 'ri-refund-2-fill'
              
             
          })
@@ -137,9 +138,10 @@ class ListFee extends Component implements HasForms, HasTable
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'danger',
                     '1' => 'success',
-                    '2' => 'warning',
+                    '2' => 'primary',
                     '3' => 'info',
                      '4' => 'gray',
+                     '5' => 'warning',
                     ///default => 'gray', 
                 }),
 
@@ -172,6 +174,8 @@ class ListFee extends Component implements HasForms, HasTable
 
                     
                     4 => 'Dalam Proses',
+
+                     5 => 'Yuran Terlebih',
 
                 ]),
 
@@ -264,6 +268,8 @@ class ListFee extends Component implements HasForms, HasTable
                                 3 => 'Gagal Bayar',
 
                                 4 => 'Dalam Proses',
+
+                                 5 => 'Yuran Terlebih',
 
                                ]),
                               // ->required(),
