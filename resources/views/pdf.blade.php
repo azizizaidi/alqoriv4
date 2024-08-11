@@ -329,19 +329,19 @@
                     @endif
                 @elseif($value->class_name->name == "Fardhu Ain Fizikal DQ")
                     @if($finalhour <= 4.9)
-                        @php $rate = 70; @endphp
-                    @elseif($finalhour <= 8.9)
                         @php $rate = 65; @endphp
-                    @elseif($finalhour >= 9)
+                    @elseif($finalhour <= 8.9)
                         @php $rate = 60; @endphp
+                    @elseif($finalhour >= 9)
+                        @php $rate = 55; @endphp
                     @endif
                 @elseif($value->class_name->name == "Al-Quran Fizikal DQ")
                     @if($finalhour <= 4.9)
-                        @php $rate = 60; @endphp
+                        @php $rate = 65; @endphp
                     @elseif($finalhour <= 8.9)
-                        @php $rate = 55; @endphp
+                        @php $rate = 60; @endphp
                     @elseif($finalhour >= 9)
-                        @php $rate = 50; @endphp
+                        @php $rate = 55; @endphp
                     @endif
                 @else
                     @php $rate = $value->class_name->feeperhour ?? 0; @endphp
@@ -397,19 +397,19 @@
                     @endif
                 @elseif($value->class_name_2->name == "Fardhu Ain Fizikal DQ")
                     @if($finalhour <= 4.9)
-                        @php $rate_2 = 70; @endphp
-                    @elseif($finalhour <= 8.9)
                         @php $rate_2 = 65; @endphp
-                    @elseif($finalhour >= 9)
+                    @elseif($finalhour <= 8.9)
                         @php $rate_2 = 60; @endphp
+                    @elseif($finalhour >= 9)
+                        @php $rate_2 = 55; @endphp
                     @endif
                 @elseif($value->class_name_2->name == "Al-Quran Fizikal DQ")
                     @if($finalhour <= 4.9)
-                        @php $rate_2 = 60; @endphp
+                        @php $rate_2 = 65; @endphp
                     @elseif($finalhour <= 8.9)
-                        @php $rate_2 = 55; @endphp
+                        @php $rate_2 = 60; @endphp
                     @elseif($finalhour >= 9)
-                        @php $rate_2 = 50; @endphp
+                        @php $rate_2 = 55; @endphp
                     @endif
                 @else
                     @php $rate_2 = $value->class_name_2->feeperhour ?? 0; @endphp

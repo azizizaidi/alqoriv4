@@ -338,6 +338,10 @@ class ReportClassResource extends Resource
                 ->toggleable()
                 ->currency('MYR')
                 ->label('Elaun'),
+                TextColumn::make('fee_student')
+                ->label('Yuran')
+                ->currency('MYR')
+                ->toggleable(),
                 
                 TextColumn::make('date')
                 ->toggleable()
