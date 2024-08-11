@@ -94,11 +94,14 @@ class AssignClassTeacherResource extends Resource
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('teacher.name')
+                ->searchable(isIndividual: true)
                 ->label('Nama Guru'),
                 TextColumn::make('registrar.name')
+                ->searchable(isIndividual: true)
                 ->label('Nama Klien'),
                 TextColumn::make('assign_class_code')
-                ->label('Kod Kelas'),
+                ->searchable(isIndividual: true)
+                ->label('Kod Klien'),
                 TextColumn::make('classes.name')
                 ->badge()
                 ->label('Nama Kelas'),
@@ -111,7 +114,7 @@ class AssignClassTeacherResource extends Resource
                 //
             ])
             ->actions([
-               // Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -146,7 +149,7 @@ class AssignClassTeacherResource extends Resource
         $locale = app()->getLocale();
 
         if($locale == 'ms'){
-            return "Penetapan Guru Pendaftar";
+            return "Penetapan Guru Klien";
         }
         else
            return "Assign Class Teacher";
