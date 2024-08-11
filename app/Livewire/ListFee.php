@@ -103,6 +103,7 @@ class ListFee extends Component implements HasForms, HasTable
                     ->label('Yuran')
                     ->currency('MYR')
                     ->toggleable(),
+                   
                     TextColumn::make('note')
                     ->label('Nota')
                     ->toggleable(isToggledHiddenByDefault: true),
