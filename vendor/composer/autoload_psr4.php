@@ -108,7 +108,6 @@ return array(
     'Laravel\\Sanctum\\' => array($vendorDir . '/laravel/sanctum/src'),
     'Laravel\\Sail\\' => array($vendorDir . '/laravel/sail/src'),
     'Laravel\\Prompts\\' => array($vendorDir . '/laravel/prompts/src'),
-    'Laravel\\Horizon\\' => array($vendorDir . '/laravel/horizon/src'),
     'Lab404\\Impersonate\\' => array($vendorDir . '/lab404/laravel-impersonate/src'),
     'Kirschbaum\\PowerJoins\\' => array($vendorDir . '/kirschbaum-development/eloquent-power-joins/src'),
     'Kenepa\\MultiWidget\\' => array($vendorDir . '/kenepa/multi-widget/src'),
