@@ -10,6 +10,7 @@ use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -83,12 +84,12 @@ class ListFee extends Component implements HasForms, HasTable
                     ->searchable(isIndividual: true),
 
                     TextColumn::make('registrar.name')
-                    ->label('Nama Pendaftar')
+                    ->label('Nama Klien')
                     ->toggleable()
                     ->searchable(isIndividual: true),
 
                     TextColumn::make('registrar.code')
-                    ->label('Kod Pendaftar')
+                    ->label('Kod Klien')
                     ->searchable()
                     ->toggleable(),
                      TextColumn::make('registrar.phone')
@@ -103,6 +104,7 @@ class ListFee extends Component implements HasForms, HasTable
                     ->label('Yuran')
                     ->currency('MYR')
                     ->toggleable(),
+                   
                     TextColumn::make('note')
                     ->label('Nota')
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -129,6 +131,7 @@ class ListFee extends Component implements HasForms, HasTable
            '2' => 'fas-hand-holding-usd',
            '3' => 'elemplus-failed',
            '4' => 'heroicon-m-arrow-uturn-left',
+           '5' => 'ri-refund-2-fill'
              
             
          })
@@ -136,9 +139,10 @@ class ListFee extends Component implements HasForms, HasTable
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'danger',
                     '1' => 'success',
-                    '2' => 'warning',
+                    '2' => 'primary',
                     '3' => 'info',
                      '4' => 'gray',
+                     '5' => 'warning',
                     ///default => 'gray', 
                 }),
 
@@ -171,6 +175,8 @@ class ListFee extends Component implements HasForms, HasTable
 
                     
                     4 => 'Dalam Proses',
+
+                     5 => 'Yuran Terlebih',
 
                 ]),
 
@@ -264,15 +270,18 @@ class ListFee extends Component implements HasForms, HasTable
 
                                 4 => 'Dalam Proses',
 
+                                 5 => 'Yuran Terlebih',
+
                                ]),
                               // ->required(),
-                               FileUpload::make('receipt')
+                              // FileUpload::make('receipt')
+                               SpatieMediaLibraryFileUpload::make('receipt')
                                ->image()
                                ->label('Resit')
                             //   ->required()
 
                                ->disk('public')
-                               ->directory('livewire-tmp')
+                               ->directory('images')
                                ->visibility('public')
                                //->storeFiles(false)
                                 ->downloadable()
