@@ -26,18 +26,20 @@
         masked:'',
         init(){
         \$nextTick(this.updateMasked());
-        \$watch('masked',()=>this.updateInput());
+        \$watch('masked',(value, oldValue)=>this.updateInput(value,oldValue));
         \$watch('input', () => this.updateMasked());
         },
-        updateMasked(value, oldValue){
+        updateMasked(){
             if(this.input !== undefined && typeof Number(this.input) === 'number') {
                 if(this.masked?.replaceAll('$thousandSeparator','').replaceAll('$decimalSeparator','.') !== this.input){
                     this.masked = this.input?.toString().replaceAll('.','$decimalSeparator');
                 }
             }
         },
-        updateInput(){
-            this.input = this.masked?.replaceAll('$thousandSeparator','').replaceAll('$decimalSeparator','.');
+        updateInput(value, oldValue){
+            if(value?.replaceAll('$thousandSeparator','').replaceAll('$decimalSeparator','.') !== oldValue?.replaceAll('$thousandSeparator','').replaceAll('$decimalSeparator','.')){
+                this.input = this.masked?.replaceAll('$thousandSeparator','').replaceAll('$decimalSeparator','.');
+            }
         }
     }
 JS;

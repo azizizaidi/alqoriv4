@@ -22,6 +22,7 @@ use Filament\Forms\Components\TextInput;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Actions\BulkAction;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Cache;
 
 
 class UserResource extends Resource

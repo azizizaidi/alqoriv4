@@ -39,6 +39,7 @@
         "livewire/livewire": "^3.0",
         "owenvoke/blade-fontawesome": "^2.6",
         "postare/blade-mdi": "^1.1",
+        "predis/predis": "^2.2",
         "psr/simple-cache": "2.0",
         "pxlrbt/filament-excel": "^2.3",
         "saade/filament-laravel-log": "3.0",

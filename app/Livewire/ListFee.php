@@ -274,8 +274,8 @@ class ListFee extends Component implements HasForms, HasTable
 
                                ]),
                               // ->required(),
-                              // FileUpload::make('receipt')
-                               SpatieMediaLibraryFileUpload::make('receipt')
+                               FileUpload::make('receipt')
+                              // SpatieMediaLibraryFileUpload::make('receipt')
                                ->image()
                                ->label('Resit')
                             //   ->required()
