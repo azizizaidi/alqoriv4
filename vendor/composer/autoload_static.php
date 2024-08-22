@@ -1300,6 +1300,7 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\Filament\\AdminPanelProvider' => __DIR__ . '/../..' . '/app/Providers/Filament/AdminPanelProvider.php',
+        'App\\Providers\\HorizonServiceProvider' => __DIR__ . '/../..' . '/app/Providers/HorizonServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Tables\\Columns\\Invoice' => __DIR__ . '/../..' . '/app/Tables/Columns/Invoice.php',
         'App\\Traits\\Auditable' => __DIR__ . '/../..' . '/app/Traits/Auditable.php',

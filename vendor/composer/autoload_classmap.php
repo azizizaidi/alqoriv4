@@ -169,6 +169,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\Filament\\AdminPanelProvider' => $baseDir . '/app/Providers/Filament/AdminPanelProvider.php',
+    'App\\Providers\\HorizonServiceProvider' => $baseDir . '/app/Providers/HorizonServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Tables\\Columns\\Invoice' => $baseDir . '/app/Tables/Columns/Invoice.php',
     'App\\Traits\\Auditable' => $baseDir . '/app/Traits/Auditable.php',
