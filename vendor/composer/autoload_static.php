@@ -925,9 +925,9 @@ class ComposerStaticInit7fa3770ecb9aa5a49cb7d09a218b8e77
         ),
         'Filament\\' => 
         array (
-            0 => __DIR__ . '/..' . '/filament/filament/src',
-            1 => __DIR__ . '/..' . '/filament/spatie-laravel-media-library-plugin/src',
-            2 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
+            0 => __DIR__ . '/..' . '/filament/spatie-laravel-media-library-plugin/src',
+            1 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
+            2 => __DIR__ . '/..' . '/filament/filament/src',
         ),
         'Faker\\' => 
         array (

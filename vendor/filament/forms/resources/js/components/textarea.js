@@ -1,4 +1,8 @@
-export default function textareaFormComponent({ initialHeight }) {
+export default function textareaFormComponent({
+    initialHeight,
+    shouldAutosize,
+    state,
+}) {
     return {
         state,
 
@@ -8,7 +12,14 @@ export default function textareaFormComponent({ initialHeight }) {
             this.wrapperEl = this.$el.parentNode
 
             this.setInitialHeight()
-            this.setUpResizeObserver()
+
+            if (shouldAutosize) {
+                this.$watch('state', () => {
+                    this.resize()
+                })
+            } else {
+                this.setUpResizeObserver()
+            }
         },
 
         setInitialHeight: function () {
