@@ -275,29 +275,29 @@ class ListFee extends Component implements HasForms, HasTable
                                ]),
                               // ->required(),
                               // FileUpload::make('receipt')
-                               SpatieMediaLibraryFileUpload::make('receipt')
-                               ->image()
-                               ->label('Resit')
+                           
+                            //   ->image()
+                            //   ->label('Resit')
                             //   ->required()
 
-                               ->disk('public')
-                               ->directory('images')
-                               ->visibility('public')
+                         //      ->disk('public')
+                         //      ->directory('images')
+                         //      ->visibility('public')
                                //->storeFiles(false)
-                                ->downloadable()
-                                ->loadingIndicatorPosition('left')
-                                ->panelAspectRatio('2:1')
-                                ->panelLayout('integrated')
-                                ->removeUploadedFileButtonPosition('right')
-                                ->uploadButtonPosition('left')
-                                ->uploadProgressIndicatorPosition('left'),
+                          //      ->downloadable()
+                         //       ->loadingIndicatorPosition('left')
+                         //       ->panelAspectRatio('2:1')
+                         //       ->panelLayout('integrated')
+                         //       ->removeUploadedFileButtonPosition('right')
+                         //       ->uploadButtonPosition('left')
+                        //        ->uploadProgressIndicatorPosition('left'),
                                 TextInput::make('note')
                                 ->label('Nota')
 
                        ])
                        ->action(function (array $data, ReportClass $record): void {
                         $record->status = $data['status'];
-                        $record->receipt = $data['receipt'];
+                     //   $record->receipt = $data['receipt'];
                         $record->note = $data['note'];
 
 
