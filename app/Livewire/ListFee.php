@@ -108,33 +108,35 @@ class ListFee extends Component implements HasForms, HasTable
                     TextColumn::make('note')
                     ->label('Nota')
                     ->toggleable(isToggledHiddenByDefault: true),
-          //          TextColumn::make('status')
-         //       ->badge()
-         //       ->label('Status') // Optional: Add a label for the column header
-          //      ->formatStateUsing(fn ($state) => match ($state) {
-          //          0 => 'Belum Bayar',
 
-        //            1 => 'Dah Bayar',
+                    TextColumn::make('status')
+                   ->badge()
+                   ->label('Status') // Optional: Add a label for the column header
+                   ->formatStateUsing(fn ($state) => match ($state) {
+                   0 => 'Belum Bayar',
 
-          //          2 => 'Dalam Proses Transaksi',
+                    1 => 'Dah Bayar',
 
-            //        3 => 'Gagal Bayar',
+                    2 => 'Dalam Proses Transaksi',
 
-          //          4 => 'Dalam Proses',
-         //           default => 'Unknown',
-         //
-         //       })
-         IconColumn::make('status')
-         ->icon(fn (string $state): string => match ($state) {
-            '0' => 'far-times-circle',
-           '1' => 'si-ticktick',
-           '2' => 'fas-hand-holding-usd',
-           '3' => 'elemplus-failed',
-           '4' => 'heroicon-m-arrow-uturn-left',
-           '5' => 'ri-refund-2-fill'
+                    3 => 'Gagal Bayar',
+
+                    4 => 'Dalam Proses',
+
+                    5 => 'Yuran Terlebih',
+         
+                })
+  //       IconColumn::make('status')
+  //       ->icon(fn (string $state): string => match ($state) {
+  //          '0' => 'far-times-circle',
+  //         '1' => 'si-ticktick',
+  //         '2' => 'fas-hand-holding-usd',
+  //         '3' => 'elemplus-failed',
+  //         '4' => 'heroicon-m-arrow-uturn-left',
+  //         '5' => 'ri-refund-2-fill'
              
             
-         })
+   //      })
                    
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'danger',
@@ -212,6 +214,7 @@ class ListFee extends Component implements HasForms, HasTable
                     '05-2024' => 'Mei 2024',
                      '06-2024' => 'Jun 2024',
                     '07-2024' => 'Julai 2024',
+                    '08-2024' => 'Ogos 2024',
                 ]),
              
 
