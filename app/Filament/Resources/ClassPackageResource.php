@@ -18,7 +18,7 @@ class ClassPackageResource extends Resource
 {
     protected static ?string $model = ClassPackage::class;
 
-    protected static ?string $navigationIcon = 'iconoir-packages';
+    protected static ?string $navigationIcon = 'heroicon-m-archive-box';
 
     public static function form(Form $form): Form
     {
