@@ -111,24 +111,24 @@ class ListAllowance extends Component implements HasForms, HasTable
                     ->summarize(Sum::make()->money('MYR'))
                     ->toggleable(),
 
-             //       TextColumn::make('allowance_note')
-          //      ->badge()
-           //     ->label('Status Elaun') // Optional: Add a label for the column header
-           //     ->formatStateUsing(fn ($state) => match ($state) {
-            //        'dah_bayar' => 'Dah Bayar',
+                    TextColumn::make('allowance_note')
+                ->badge()
+                ->label('Status Elaun') // Optional: Add a label for the column header
+                ->formatStateUsing(fn ($state) => match ($state) {
+                    'dah_bayar' => 'Dah Bayar',
 
-            //        'belum_bayar' => 'Belum Bayar',
+                    'belum_bayar' => 'Belum Bayar',
 
-             //       'NULL'  => 'Tiada Data',
+                    'NULL'  => 'Tiada Data',
 
                    
-           //     })
-           IconColumn::make('allowance_note')
-    ->icon(fn (string $state): string => match ($state) {
-        'dah_bayar' => 'si-ticktick',
-        'belum_bayar' => 'far-times-circle',
+               })
+   //        IconColumn::make('allowance_note')
+  //  ->icon(fn (string $state): string => match ($state) {
+  //      'dah_bayar' => 'si-ticktick',
+  //      'belum_bayar' => 'heroicon-s-table-cells',
        
-    })
+  //  })
                 ->color(fn (string $state): string => match ($state) {
                     'dah_bayar' => 'success',
                     'belum_bayar' => 'danger',
@@ -190,6 +190,7 @@ class ListAllowance extends Component implements HasForms, HasTable
                     '05-2024' => 'Mei 2024',
                     '06-2024' => 'Jun 2024',
                     '07-2024' => 'Julai 2024',
+                    '08-2024' => 'Ogos 2024',
                 ]),
              
 
