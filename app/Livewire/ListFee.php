@@ -128,7 +128,7 @@ class ListFee extends Component implements HasForms, HasTable
                 })
   //       IconColumn::make('status')
   //       ->icon(fn (string $state): string => match ($state) {
-  //          '0' => 'far-times-circle',
+  //          '0' => 'heroicon-s-table-cells',
   //         '1' => 'si-ticktick',
   //         '2' => 'fas-hand-holding-usd',
   //         '3' => 'elemplus-failed',
