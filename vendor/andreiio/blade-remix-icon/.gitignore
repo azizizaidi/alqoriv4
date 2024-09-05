@@ -1,6 +1,0 @@
-/node_modules
-/vendor
-/.phpunit.result.cache
-/.php_cs.cache
-/composer.lock
-/package-lock.json

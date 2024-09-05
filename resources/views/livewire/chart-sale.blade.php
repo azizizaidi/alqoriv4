@@ -61,6 +61,7 @@ var feeapr24 = <?php echo $reportclasses->where('month','04-2024')->whereNull('d
 var feemay24 = <?php echo $reportclasses->where('month','05-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feejun24 = <?php echo $reportclasses->where('month','06-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feejul24 = <?php echo $reportclasses->where('month','07-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feeogs24 = <?php echo $reportclasses->where('month','08-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 
 var alwjan22 = <?php echo $reportclasses->where('month',null)->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwfeb22 = <?php echo $reportclasses->where('month','02-2022')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
@@ -93,11 +94,12 @@ var alwapr24 = <?php echo $reportclasses->where('month','04-2024')->whereNull('d
 var alwmay24 = <?php echo $reportclasses->where('month','05-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwjun24 = <?php echo $reportclasses->where('month','06-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwjul24 = <?php echo $reportclasses->where('month','07-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwogs24 = <?php echo $reportclasses->where('month','08-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 
 // Define the chart data and options
 
 var chartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November','December'],
+    labels: ['Januari', 'Februari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November','Disember'],
     datasets: [{
       backgroundColor: 'rgba(0,0,255,1.0)',
       borderColor: 'rgba(0,0,255,0.1)',
@@ -171,8 +173,8 @@ function updateChart() {
       allowanceData =[alwjan23,alwfeb23,alwmar23,alwapr23,alwmay23,alwjun23,alwjul23,alwogs23,alwsep23,alwoct23,alwnov23,alwdec23];
       break;
     case '2024':
-      feeData = [feejan24,feefeb24,feemar24, feeapr24, feemay24, feejun24,feejul24];
-      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24];
+      feeData = [feejan24,feefeb24,feemar24, feeapr24, feemay24, feejun24,feejul24,feeogs24];
+      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24];
       break;
     default:
       // Handle default case or show an error message
