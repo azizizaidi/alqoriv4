@@ -11,7 +11,7 @@ use App\Models\ReportClass;
 
 class Allowance extends Page
 {
-    protected static ?string $navigationIcon = 'ri-money-dollar-circle-line';
+    protected static ?string $navigationIcon = 'heroicon-m-currency-dollar';
 
     protected static string $view = 'filament.pages.allowance';
 

@@ -6,7 +6,7 @@ use Filament\Pages\Page;
 
 class ClientClass extends Page
 {
-    protected static ?string $navigationIcon = 'mdi-google-classroom';
+    protected static ?string $navigationIcon = 'heroicon-s-table-cells';
 
     protected static string $view = 'filament.pages.client-class';
 
