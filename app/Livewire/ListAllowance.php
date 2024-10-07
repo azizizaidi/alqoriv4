@@ -98,7 +98,9 @@ class ListAllowance extends Component implements HasForms, HasTable
                     ->label('Nama Guru')
                     //->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
-
+                    TextColumn::make('created_at')
+                    ->label('Tarikh Hantar')
+                    ->sortable(),
                
                     TextColumn::make('month')
                     ->label('Bulan')
@@ -191,6 +193,7 @@ class ListAllowance extends Component implements HasForms, HasTable
                     '06-2024' => 'Jun 2024',
                     '07-2024' => 'Julai 2024',
                     '08-2024' => 'Ogos 2024',
+                    '09-2024' => 'September 2024',
                 ]),
              
 
