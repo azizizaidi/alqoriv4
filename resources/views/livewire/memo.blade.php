@@ -21,7 +21,7 @@
         </div>
          <br>
         <div class="card-body">
-            <p><strong>Bulan:</strong> Ogos 2024</p>
+            <p><strong>Bulan:</strong> September 2024</p>
             <br>
             <p>Assalamualaikum wbt</p>
             <br>
