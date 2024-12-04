@@ -64,6 +64,7 @@ var feejul24 = <?php echo $reportclasses->where('month','07-2024')->whereNull('d
 var feeogs24 = <?php echo $reportclasses->where('month','08-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feesep24 = <?php echo $reportclasses->where('month','09-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feeoct24 = <?php echo $reportclasses->where('month','10-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feenov24 = <?php echo $reportclasses->where('month','11-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 
 var alwjan22 = <?php echo $reportclasses->where('month',null)->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwfeb22 = <?php echo $reportclasses->where('month','02-2022')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
@@ -99,6 +100,7 @@ var alwjul24 = <?php echo $reportclasses->where('month','07-2024')->whereNull('d
 var alwogs24 = <?php echo $reportclasses->where('month','08-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwsep24 = <?php echo $reportclasses->where('month','09-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwoct24 = <?php echo $reportclasses->where('month','10-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwnov24 = <?php echo $reportclasses->where('month','11-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 
 // Define the chart data and options
 
@@ -177,8 +179,8 @@ function updateChart() {
       allowanceData =[alwjan23,alwfeb23,alwmar23,alwapr23,alwmay23,alwjun23,alwjul23,alwogs23,alwsep23,alwoct23,alwnov23,alwdec23];
       break;
     case '2024':
-      feeData = [feejan24,feefeb24,feemar24, feeapr24, feemay24, feejun24,feejul24,feeogs24,feesep24,feeoct24];
-      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24];
+      feeData = [feejan24,feefeb24,feemar24, feeapr24, feemay24, feejun24,feejul24,feeogs24,feesep24,feeoct24,feenov24];
+      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24,alwnov24];
       break;
     default:
       // Handle default case or show an error message

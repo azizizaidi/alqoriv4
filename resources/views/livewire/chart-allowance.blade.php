@@ -140,7 +140,7 @@ function updateChart() {
       break;
     case '2024':
     
-      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24];
+      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24,alwnov24];
       break;
     default:
       // Handle default case or show an error message
