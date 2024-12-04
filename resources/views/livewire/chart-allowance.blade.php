@@ -66,6 +66,7 @@ var alwjul24 = <?php echo $reportclasses->where('month','07-2024')->whereNull('d
 var alwogs24 = <?php echo $reportclasses->where('month','08-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwsep24 = <?php echo $reportclasses->where('month','09-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwoct24 = <?php echo $reportclasses->where('month','10-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwnov24 = <?php echo $reportclasses->where('month','11-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 
 // Define the chart data and options
 
