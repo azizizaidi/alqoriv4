@@ -3,6 +3,7 @@
 
 @if(Auth::user()->roles->contains(2))
 @livewire(\App\Filament\Widgets\StatsOverview::class)
+@livewire('list-fee')
 @livewire('chart-allowance')
 @endif
 @if(Auth::user()->roles->contains(4))
