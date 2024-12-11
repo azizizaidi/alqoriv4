@@ -215,6 +215,10 @@ class ListFee extends Component implements HasForms, HasTable
                      '06-2024' => 'Jun 2024',
                     '07-2024' => 'Julai 2024',
                     '08-2024' => 'Ogos 2024',
+                    '09-2024' => 'September 2024',
+                    '10-2024' => 'Oktober 2024',
+                    '11-2024' => 'November 2024',
+                    '12-2024' => 'Disember 2024',
                 ]),
              
 
@@ -223,6 +227,7 @@ class ListFee extends Component implements HasForms, HasTable
                 Action::make('pdf')
                 ->label('Invois')
                 ->color('danger')
+                ->visible(fn(): bool => auth()->user()->can('view-any User'))
                 ->icon('heroicon-c-clipboard-document-list')
                 ->action(function (ReportClass $record) {
                     $this->finalhour = $record->total_hour + ($record->total_hour_2 ?? 0); // Calculate finalhour
@@ -248,11 +253,14 @@ class ListFee extends Component implements HasForms, HasTable
                Action::make('bayar')
                        ->icon('heroicon-m-credit-card')
                        ->color('danger')
-                       ->visible(fn(): bool => auth()->user()->can('create_report::class'))
+                       ->visible(fn(): bool => auth()->user()->can('view-any User'))
+                     // ->visible(fn () => in_array(auth()->user()->role_id, [1, 5]))
                        ->url(fn (ReportClass $pay): string => route('toyyibpay.createBill',$pay)),
            
               Action::make('sunting')
                     ->icon('heroicon-o-pencil-square')
+                  //  ->visible(fn () => in_array(auth()->user()->role_id, [1, 5]))
+                    ->visible(fn(): bool => auth()->user()->can('view-any User'))
                     ->fillForm(fn (ReportClass $record): array => [
                    'status' => $record->status,
                    'receipt' => $record->receipt,
