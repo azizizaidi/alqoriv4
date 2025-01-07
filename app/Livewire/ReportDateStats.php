@@ -12,16 +12,16 @@ class ReportDateStats extends BaseWidget
     protected function getStats(): array
     {
         // Sum the allowance_amount for the specified month
-        $earlyAllowance = ReportClass::where('month', '11-2024')
-            ->where('created_at', '<', Carbon::create(2024, 12, 1))
+        $earlyAllowance = ReportClass::where('month', '12-2024')
+            ->where('created_at', '<', Carbon::create(2025, 1, 1))
             ->sum('allowance');
 
-        $lateAllowance = ReportClass::where('month', '11-2024')
-            ->where('created_at', '>=', Carbon::create(2024, 12, 1))
+        $lateAllowance = ReportClass::where('month', '12-2024')
+            ->where('created_at', '>=', Carbon::create(2025, 1, 1))
             ->sum('allowance');
 
         return [
-            Stat::make('Jumlah Elaun Hantar Sebelum 1/12/24', 'RM' . number_format($earlyAllowance, 2))
+            Stat::make('Jumlah Elaun Hantar Sebelum 1/1/25', 'RM' . number_format($earlyAllowance, 2))
                 ->color('success')
                 ->extraAttributes([
                     // Add attributes if needed

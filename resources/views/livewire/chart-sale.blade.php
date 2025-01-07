@@ -179,8 +179,8 @@ function updateChart() {
       allowanceData =[alwjan23,alwfeb23,alwmar23,alwapr23,alwmay23,alwjun23,alwjul23,alwogs23,alwsep23,alwoct23,alwnov23,alwdec23];
       break;
     case '2024':
-      feeData = [feejan24,feefeb24,feemar24, feeapr24, feemay24, feejun24,feejul24,feeogs24,feesep24,feeoct24,feenov24];
-      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24,alwnov24];
+      feeData = [feejan24,feefeb24,feemar24, feeapr24, feemay24, feejun24,feejul24,feeogs24,feesep24,feeoct24,feenov24,feedec24];
+      allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24,alwnov24,alwdec24];
       break;
     default:
       // Handle default case or show an error message
