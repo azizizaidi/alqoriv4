@@ -16,7 +16,7 @@ class ReportDateStats extends BaseWidget
             ->where('created_at', '<', Carbon::create(2025, 2, 1))
             ->sum('allowance');
 
-        $lateAllowance = ReportClass::where('month', '12-2024')
+        $lateAllowance = ReportClass::where('month', '01-2025')
             ->where('created_at', '>=', Carbon::create(2025, 2, 1))
             ->sum('allowance');
 
