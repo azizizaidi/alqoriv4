@@ -12,6 +12,7 @@
             <option value="2022">2022</option>
             <option value="2023">2023</option>
             <option value="2024">2024</option>
+            <option value="2025">2025</option>
         </select>
     </div>
 
@@ -68,6 +69,8 @@ var alwsep24 = <?php echo $reportclasses->where('month','09-2024')->whereNull('d
 var alwoct24 = <?php echo $reportclasses->where('month','10-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwnov24 = <?php echo $reportclasses->where('month','11-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwdec24 = <?php echo $reportclasses->where('month','12-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwjan25 = <?php echo $reportclasses->where('month','01-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwfeb25 = <?php echo $reportclasses->where('month','02-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 
 // Define the chart data and options
 
