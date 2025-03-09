@@ -68,6 +68,7 @@ var feeoct24 = <?php echo $reportclasses->where('month','10-2024')->whereNull('d
 var feenov24 = <?php echo $reportclasses->where('month','11-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feedec24 = <?php echo $reportclasses->where('month','12-2024')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feejan25 = <?php echo $reportclasses->where('month','01-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feefeb25 = <?php echo $reportclasses->where('month','02-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 
 var alwjan22 = <?php echo $reportclasses->where('month',null)->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwfeb22 = <?php echo $reportclasses->where('month','02-2022')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
@@ -106,6 +107,7 @@ var alwoct24 = <?php echo $reportclasses->where('month','10-2024')->whereNull('d
 var alwnov24 = <?php echo $reportclasses->where('month','11-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwdec24 = <?php echo $reportclasses->where('month','12-2024')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwjan25 = <?php echo $reportclasses->where('month','01-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwfeb25 = <?php echo $reportclasses->where('month','02-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 
 // Define the chart data and options
 
@@ -188,8 +190,8 @@ function updateChart() {
       allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24,alwnov24,alwdec24];
       break;
       case '2025':
-      feeData = [feejan25];
-      allowanceData = [alwjan25];
+      feeData = [feejan25,feefeb25];
+      allowanceData = [alwjan25,alwfeb25];
       break;
     default:
       // Handle default case or show an error message
