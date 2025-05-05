@@ -265,7 +265,31 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="w-1/3 p-2">
+                                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                                        <div class="overflow-hidden">
+                                            <table class="min-w-full border text-center text-sm font-light dark:border-neutral-500">
+                                                <thead class="border-b font-medium dark:border-neutral-500 bg-slate-300">
+                                                    <tr>
+                                                        <th scope="col" class="border-r px-6 py-4 dark:border-neutral-500">Bulan</th>
+                                                        <th scope="col" class="border-r px-6 py-4 dark:border-neutral-500">Gagal Bayar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (['01-2025', '02-2025', '03-2025', '04-2025', '05-2025', '06-2025', '07-2025', '08-2025', '09-2025', '10-2025', '11-2025', '12-2025'] as $month)
+                                                    <tr class="border-b dark:border-neutral-500">
+                                                        <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">{{ $month }}</td>
+                                                        <td class="whitespace-nowrap border-r px-6 py-4 dark:border-neutral-500">RM{{ $reportclasses->where('month', $month)->where('status', 3)->sum('fee_student') ?? '' }}</td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                   </div>
+                                 </div>         
+                             </div>
+                             
                     </article>
 
                     <!-- Panel #3 -->
