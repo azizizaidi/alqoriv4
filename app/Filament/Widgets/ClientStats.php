@@ -27,7 +27,7 @@ class ClientStats extends BaseWidget
  
         
         return [
-            Stat::make('Jumlah Yuran Bulan Mac 25',  $feeFormatted)
+            Stat::make('Jumlah Yuran Bulan April 25',  $feeFormatted)
                // ->description('32k increase')
                // ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success')
