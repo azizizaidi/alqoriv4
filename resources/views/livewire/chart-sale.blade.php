@@ -70,6 +70,17 @@ var feedec24 = <?php echo $reportclasses->where('month','12-2024')->whereNull('d
 var feejan25 = <?php echo $reportclasses->where('month','01-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feefeb25 = <?php echo $reportclasses->where('month','02-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
 var feemar25 = <?php echo $reportclasses->where('month','03-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feeapr25 = <?php echo $reportclasses->where('month','04-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feemay25 = <?php echo $reportclasses->where('month','05-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feejun25 = <?php echo $reportclasses->where('month','06-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feejul25 = <?php echo $reportclasses->where('month','07-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feeogs25 = <?php echo $reportclasses->where('month','08-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feesep25 = <?php echo $reportclasses->where('month','09-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feeoct25 = <?php echo $reportclasses->where('month','10-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feenov25 = <?php echo $reportclasses->where('month','11-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+var feedec25 = <?php echo $reportclasses->where('month','12-2025')->whereNull('deleted_at')->sum('fee_student') ?? ''; ?>;
+
+// Define the allowance data for each month
 
 var alwjan22 = <?php echo $reportclasses->where('month',null)->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwfeb22 = <?php echo $reportclasses->where('month','02-2022')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
@@ -110,6 +121,15 @@ var alwdec24 = <?php echo $reportclasses->where('month','12-2024')->whereNull('d
 var alwjan25 = <?php echo $reportclasses->where('month','01-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwfeb25 = <?php echo $reportclasses->where('month','02-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 var alwmar25 = <?php echo $reportclasses->where('month','03-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwapr25 = <?php echo $reportclasses->where('month','04-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwmay25 = <?php echo $reportclasses->where('month','05-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwjun25 = <?php echo $reportclasses->where('month','06-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwjul25 = <?php echo $reportclasses->where('month','07-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwogs25 = <?php echo $reportclasses->where('month','08-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwsep25 = <?php echo $reportclasses->where('month','09-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwoct25 = <?php echo $reportclasses->where('month','10-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwnov25 = <?php echo $reportclasses->where('month','11-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
+var alwdec25 = <?php echo $reportclasses->where('month','12-2025')->whereNull('deleted_at')->sum('allowance') ?? ''; ?>;
 
 // Define the chart data and options
 
@@ -192,8 +212,8 @@ function updateChart() {
       allowanceData = [alwjan24,alwfeb24,alwmar24, alwapr24, alwmay24, alwjun24,alwjul24,alwogs24,alwsep24,alwoct24,alwnov24,alwdec24];
       break;
       case '2025':
-      feeData = [feejan25,feefeb25,feemar25];
-      allowanceData = [alwjan25,alwfeb25,alwmar25];
+      feeData = [feejan25,feefeb25,feemar25,feeapr25,feemay25,feejun25,feejul25,feeogs25,feesep25,feeoct25,feenov25,feedec25];
+      allowanceData = [alwjan25,alwfeb25,alwmar25,alwapr25,alwmay25,alwjun25,alwjul25,alwogs25,alwsep25,alwoct25,alwnov25,alwdec25];
       break;
     default:
       // Handle default case or show an error message
