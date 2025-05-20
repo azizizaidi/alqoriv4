@@ -1,67 +1,149 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/"{:}P'
-master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
+
+# i-ALQORI – Sistem Pengurusan Pusat Pengajian Al-Quran
+
+![Version](https://img.shields.io/badge/version-4.0.0-blue?style=for-the-badge)
+![Laravel](https://img.shields.io/badge/Laravel-10-red?style=for-the-badge&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.1+-7A86B8?style=for-the-badge&logo=php)
+![Status](https://img.shields.io/badge/status-production--ready-success?style=for-the-badge)
+
+#### Sistem Pengurusan Komprehensif Bagi Pusat Pengajian Al-Quran
+</div>
+
+---
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Modular-Architecture-blueviolet" alt="Modular Architecture">
+  <img src="https://img.shields.io/badge/Scalable-Design-orange" alt="Scalable Design">
+  <img src="https://img.shields.io/badge/Production-Ready-green" alt="Production Ready">
 </p>
 
-## About Laravel
+`i-alqori` ialah sistem pengurusan lengkap untuk pusat pembelajaran Al-Quran. Projek ini dibina menggunakan Laravel + Livewire + Filament serta disusun modular dan fokus kepada kebolehskalaan (scalability)
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🎯 Ciri-Ciri Sistem
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <ul>
+        <li>🧑‍🏫 Pengurusan Guru, Pelajar, dan Pendaftar</li>
+        <li>🧾 Sistem Yuran & Invois Automatik (bulanan, kelas, tunggakan)</li>
+        <li>🔄 Pengiraan automatik yuran (<code>CalculatorFee.php</code>)</li>
+        <li>📊 Statistik kelas, pembayaran, & memo (view: <code>dashboard.blade.php</code>)</li>
+        <li>🧠 Multi-tenant support (<code>MultiTenantModelTrait.php</code>)</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li>✅ Role-based access control (Spatie Permission + Filament integration)</li>
+        <li>📄 PDF generator untuk invois (DomPDF + custom blade)</li>
+        <li>🔁 Notifikasi sistem & overdue reminder</li>
+        <li>📁 Logging & audit trail (<code>AuditLog.php</code>)</li>
+        <li>🚧 Modul akan datang: memo, coming soon, class preview</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ⚙️ Teknologi Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<table>
+  <tr>
+    <th align="center">Bahagian</th>
+    <th align="center">Teknologi</th>
+  </tr>
+  <tr>
+    <td align="center"><b>Backend</b></td>
+    <td align="center">Laravel 10, PHP 8.1+</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Frontend</b></td>
+    <td align="center">Blade, Livewire, Filament UI</td>
+  </tr>
+  <tr>
+    <td align="center"><b>PDF</b></td>
+    <td align="center">DomPDF</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Auth</b></td>
+    <td align="center">Laravel Sanctum</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Roles</b></td>
+    <td align="center">Spatie Laravel Permission</td>
+  </tr>
+  <tr>
+    <td align="center"><b>UI</b></td>
+    <td align="center">Custom + Blade Component</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Queue</b></td>
+    <td align="center">Redis-ready (config exist)</td>
+  </tr>
+  <tr>
+    <td align="center"><b>DB</b></td>
+    <td align="center">MySQL (MariaDB compatible)</td>
+  </tr>
+</table>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📁 Struktur Utama
 
-## Laravel Sponsors
+<div class="file-structure">
+  <pre>
+i-ALQORI/
+├── <b>app/</b> – Semua model, Livewire/Filament components, logic modular
+├── <b>resources/views/</b> – Blade view untuk modul: fee, class, overdue, memo
+├── <b>routes/web.php</b> – Route sistem admin & public
+└── <b>config/</b> – Setting permission, media-library, pdf, roles, queue
+  </pre>
+</div>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-### Premium Partners
+## 📦 Ciri Tambahan (Optional/Dev Ready)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<table>
+  <tr>
+    <td><b>Module Components</b></td>
+    <td>assign_class_teachers, fee_students, register_class – modular logik yuran</td>
+  </tr>
+  <tr>
+    <td><b>Financial Reports</b></td>
+    <td>ReportClass, Transaction, OverduePayList – audit dan laporan kewangan</td>
+  </tr>
+  <tr>
+    <td><b>Upcoming Features</b></td>
+    <td>memo.blade.php, coming-soon.blade.php – sokongan fungsi akan datang</td>
+  </tr>
+  <tr>
+    <td><b>UI Components</b></td>
+    <td>Themes, Badges, dan Widgets – UI fleksibel (configurable)</td>
+  </tr>
+</table>
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<div align="center">
 
-## Code of Conduct
+## 👨‍💻 Developer
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Muhammad Azizi bin Zaidi
+Backend Developer (Laravel Specialist)
 
-## Security Vulnerabilities
+[![Email](https://img.shields.io/badge/Email-azizizaidi5%40gmail.com-informational?style=flat-square&logo=gmail)](mailto:azizizaidi5@gmail.com)
+[![Phone](https://img.shields.io/badge/Phone-%2B6018--3879635-success?style=flat-square&logo=whatsapp)](tel:+60183879635)
+[![Website](https://img.shields.io/badge/Website-alqori.com-blue?style=flat-square&logo=safari)](https://alqori.com)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+</div>
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<div align="center">
+  <img src="https://img.shields.io/badge/Built%20with-❤️-red.svg" alt="Built with love">
+  <p>© 2020-2025 i-ALQORI. All Rights Reserved.</p>
+</div>
