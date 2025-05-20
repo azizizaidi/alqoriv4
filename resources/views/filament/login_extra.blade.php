@@ -8,7 +8,7 @@
                 <h3 class="text-blue-800 font-bold text-lg mb-2">👑 Admin</h3>
                 <div class="space-y-2">
                     <p><span class="font-medium">ID:</span> <code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm">admin@alqori.com</code></p>
-                    <p><span class="font-medium">Password:</span> <code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm">admin123</code></p>
+                    <p><span class="font-medium">Password:</span> <code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm">admin1234</code></p>
                 </div>
             </div>
 
