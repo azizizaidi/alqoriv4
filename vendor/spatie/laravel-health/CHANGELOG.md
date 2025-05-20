@@ -2,6 +2,157 @@
 
 All notable changes to `laravel-health` will be documented in this file.
 
+## 1.34.1 - 2025-04-17
+
+### What's Changed
+
+* Update link to Laravel docs latest version by @Erulezz in https://github.com/spatie/laravel-health/pull/270
+* Update prune docs according to current laravel documentation by @amacado in https://github.com/spatie/laravel-health/pull/271
+* Add configuration option for treating skipped checks as failures by @joaquinwojcik in https://github.com/spatie/laravel-health/pull/272
+
+### New Contributors
+
+* @Erulezz made their first contribution in https://github.com/spatie/laravel-health/pull/270
+* @amacado made their first contribution in https://github.com/spatie/laravel-health/pull/271
+* @joaquinwojcik made their first contribution in https://github.com/spatie/laravel-health/pull/272
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.34.0...1.34.1
+
+## 1.34.0 - 2025-04-01
+
+### What's Changed
+
+* Fix documentation: Correct method name from ignorePackages to ignored… by @syaritech in https://github.com/spatie/laravel-health/pull/268
+* Secret Token Middleware by @jakub-wizcodepl in https://github.com/spatie/laravel-health/pull/269
+
+### New Contributors
+
+* @syaritech made their first contribution in https://github.com/spatie/laravel-health/pull/268
+* @jakub-wizcodepl made their first contribution in https://github.com/spatie/laravel-health/pull/269
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.33.0...1.34.0
+
+## 1.33.0 - 2025-03-18
+
+### What's Changed
+
+* feat: custom timezones by @mateusjatenee in https://github.com/spatie/laravel-health/pull/264
+
+### New Contributors
+
+* @mateusjatenee made their first contribution in https://github.com/spatie/laravel-health/pull/264
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.32.5...1.33.0
+
+## 1.32.5 - 2025-03-08
+
+### What's Changed
+
+* Handle nullable for notificationMessage property by @mahdimsr in https://github.com/spatie/laravel-health/pull/266
+
+### New Contributors
+
+* @mahdimsr made their first contribution in https://github.com/spatie/laravel-health/pull/266
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.32.4...1.32.5
+
+## 1.32.4 - 2025-03-03
+
+### What's Changed
+
+* Update package to resolve security vulnerability issues by @Orrison in https://github.com/spatie/laravel-health/pull/263
+
+### New Contributors
+
+* @Orrison made their first contribution in https://github.com/spatie/laravel-health/pull/263
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.32.3...1.32.4
+
+## 1.32.3 - 2025-02-24
+
+### What's Changed
+
+* Fixes errant reference to Health facade - should be Check facade - when creating macros for health checks by @Mrkbingham in https://github.com/spatie/laravel-health/pull/262
+* Add optional pings to horizon and schedule checks by @Nicholasbell03 in https://github.com/spatie/laravel-health/pull/248
+
+### New Contributors
+
+* @Mrkbingham made their first contribution in https://github.com/spatie/laravel-health/pull/262
+* @Nicholasbell03 made their first contribution in https://github.com/spatie/laravel-health/pull/248
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.32.2...1.32.3
+
+## 1.32.2 - 2025-02-21
+
+### What's Changed
+
+* feat: support Laravel 12 by @SRWieZ in https://github.com/spatie/laravel-health/pull/258
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.32.1...1.32.2
+
+## 1.32.1 - 2025-02-14
+
+### What's Changed
+
+* Update old docs link by @Joel-Jensen in https://github.com/spatie/laravel-health/pull/257
+* Fix some typos and suggest improvements in via-oh-dear.md by @larshanskrause in https://github.com/spatie/laravel-health/pull/260
+* Improve Bangla translation by @RatulAlMamun in https://github.com/spatie/laravel-health/pull/259
+
+### New Contributors
+
+* @larshanskrause made their first contribution in https://github.com/spatie/laravel-health/pull/260
+* @RatulAlMamun made their first contribution in https://github.com/spatie/laravel-health/pull/259
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.32.0...1.32.1
+
+## 1.32.0 - 2025-01-13
+
+### What's Changed
+
+* Fix typo in Italian translation by @Pes8 in https://github.com/spatie/laravel-health/pull/256
+* Add pause and resume commands for health checks by @faustoFF in https://github.com/spatie/laravel-health/pull/255
+
+### New Contributors
+
+* @Pes8 made their first contribution in https://github.com/spatie/laravel-health/pull/256
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.31.0...1.32.0
+
+## 1.31.0 - 2024-12-09
+
+### What's Changed
+
+* Indentation in docs by @yoeriboven in https://github.com/spatie/laravel-health/pull/245
+* Update 3rd Party Checks List - Opcache check by @ultrono in https://github.com/spatie/laravel-health/pull/251
+* Remove typo in crashed message by @JaZo in https://github.com/spatie/laravel-health/pull/250
+* bump serializable-closure by @timoteo7 in https://github.com/spatie/laravel-health/pull/249
+* Only return failure status code when results contains failures by @maartenpaauw in https://github.com/spatie/laravel-health/pull/246
+
+### New Contributors
+
+* @ultrono made their first contribution in https://github.com/spatie/laravel-health/pull/251
+* @JaZo made their first contribution in https://github.com/spatie/laravel-health/pull/250
+* @timoteo7 made their first contribution in https://github.com/spatie/laravel-health/pull/249
+* @maartenpaauw made their first contribution in https://github.com/spatie/laravel-health/pull/246
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.30.1...1.31.0
+
+## 1.30.1 - 2024-08-02
+
+### What's Changed
+
+* Performance optimizations for backups check by @pelmered in https://github.com/spatie/laravel-health/pull/240
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.30.0...1.30.1
+
+## 1.30.0 - 2024-07-26
+
+### What's Changed
+
+* Improve redis memory usage check by @pelmered in https://github.com/spatie/laravel-health/pull/239
+
+**Full Changelog**: https://github.com/spatie/laravel-health/compare/1.29.4...1.30.0
+
 ## 1.29.4 - 2024-07-22
 
 ### What's Changed

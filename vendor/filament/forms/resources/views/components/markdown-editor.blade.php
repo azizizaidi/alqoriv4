@@ -20,8 +20,9 @@
             "
         >
             <div
-                ax-load="visible"
-                ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('markdown-editor', 'filament/forms') }}"
+                {{-- prettier-ignore-start --}}x-load="visible || event (ax-modal-opened)"
+                {{-- prettier-ignore-end --}}
+                x-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('markdown-editor', 'filament/forms') }}"
                 x-data="markdownEditorFormComponent({
                             canAttachFiles: @js($hasToolbarButton('attachFiles')),
                             isLiveDebounced: @js($isLiveDebounced()),
@@ -47,7 +48,6 @@
                                 })
                             },
                         })"
-                x-ignore
                 wire:ignore
                 {{ $getExtraAlpineAttributeBag() }}
             >

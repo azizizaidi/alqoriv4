@@ -25,11 +25,11 @@
 >
     <div
         @if (FilamentView::hasSpaMode())
-            ax-load="visible"
+            {{-- format-ignore-start --}}x-load="visible || event (ax-modal-opened)"{{-- format-ignore-end --}}
         @else
-            ax-load
+            x-load
         @endif
-        ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('file-upload', 'filament/forms') }}"
+        x-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('file-upload', 'filament/forms') }}"
         x-data="fileUploadFormComponent({
                     acceptedFileTypes: @js($getAcceptedFileTypes()),
                     imageEditorEmptyFillColor: @js($getImageEditorEmptyFillColor()),
@@ -71,6 +71,8 @@
                     maxFiles: @js($getMaxFiles()),
                     maxSize: @js(($size = $getMaxSize()) ? "{$size}KB" : null),
                     minSize: @js(($size = $getMinSize()) ? "{$size}KB" : null),
+                    mimeTypeMap: @js($getMimeTypeMap()),
+                    maxParallelUploads: @js($getMaxParallelUploads()),
                     removeUploadedFileUsing: async (fileKey) => {
                         return await $wire.removeFormUploadedFile(@js($statePath), fileKey)
                     },
@@ -100,7 +102,6 @@
                     },
                 })"
         wire:ignore
-        x-ignore
         {{
             $attributes
                 ->merge([
@@ -109,14 +110,11 @@
                 ->merge($getExtraAttributes(), escape: false)
                 ->merge($getExtraAlpineAttributes(), escape: false)
                 ->class([
-                    'fi-fo-file-upload flex [&_.filepond--root]:font-sans',
+                    'fi-fo-file-upload flex flex-col gap-y-2 [&_.filepond--root]:font-sans',
                     match ($alignment) {
-                        Alignment::Start => 'justify-start',
-                        Alignment::Center => 'justify-center',
-                        Alignment::End => 'justify-end',
-                        Alignment::Left => 'justify-left',
-                        Alignment::Right => 'justify-right',
-                        Alignment::Between, Alignment::Justify => 'justify-between',
+                        Alignment::Start, Alignment::Left => 'items-start',
+                        Alignment::Center => 'items-center',
+                        Alignment::End, Alignment::Right => 'items-end',
                         default => $alignment,
                     },
                 ])
@@ -141,6 +139,13 @@
                 }}
             />
         </div>
+
+        <div
+            x-show="error"
+            x-text="error"
+            x-cloak
+            class="text-sm text-danger-600 dark:text-danger-400"
+        ></div>
 
         @if ($hasImageEditor && (! $isDisabled))
             <div
