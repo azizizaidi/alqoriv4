@@ -59,7 +59,7 @@ body {
         font-family: cursive;
         font-size: 2em;
         font-weight: bold;
-        text-shadow: #b71c1c 2px 2px 5px;
+        text-shadow: #b71c1c 2px 2px 5px;q
     }*/
 }
 
