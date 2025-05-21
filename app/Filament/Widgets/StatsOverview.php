@@ -27,31 +27,31 @@ class StatsOverview extends BaseWidget
           ->distinct('registrar_id')
           ->withoutTrashed()
           ->count('registrar_id');
-  
+
         return [
-            Stat::make('Elaun Bulan 4/25', $allowanceFormatted)
-              
+            Stat::make('Elaun Bulan 4/25', 'RM599')
+
                 ->color('success')
-                ->extraAttributes([ 
+                ->extraAttributes([
                    // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                     //'class' => 'cursor-pointer border-lime-400 ',
-                ]), 
+                ]),
 
 
-            Stat::make('Jumlah Klien Aktif', $activestats)
-            ->extraAttributes([ 
+            Stat::make('Jumlah Klien Aktif', '5')
+            ->extraAttributes([
                 // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                 // 'class' => 'cursor-pointer border-rose-400',
-             ]), 
+             ]),
 
-              
+
          //   Stat::make('Jumlah Kelas Aktif', '7')
-           // ->extraAttributes([ 
+           // ->extraAttributes([
                 // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                //  'class' => 'cursor-pointer border-teal-400',
-         //    ]), 
+         //    ]),
 
-              
+
         ];
     }
 

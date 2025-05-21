@@ -23,30 +23,30 @@ class  AdminStats extends BaseWidget
         $overdueFormatted = 'RM' . number_format( $sumfeeoverdue, 2);
 
         return [
-            Stat::make('Jumlah Yuran Bulan April 25', $feeFormatted )
+            Stat::make('Jumlah Yuran Bulan April 25', 'RM16987' )
                // ->description('32k increase')
                // ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success')
-                ->extraAttributes([ 
+                ->extraAttributes([
                    // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                     //'class' => 'cursor-pointer border-lime-400 ',
-                ]), 
+                ]),
 
 
-            Stat::make('Jumlah Elaun Bulan April 25',   $allowanceFormatted)
-            ->extraAttributes([ 
+            Stat::make('Jumlah Elaun Bulan April 25',   'RM10987')
+            ->extraAttributes([
                 // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                 // 'class' => 'cursor-pointer border-rose-400',
-             ]), 
+             ]),
 
-              
-            Stat::make('Baki Yuran Belum Bayar April 25', $overdueFormatted)
-            ->extraAttributes([ 
+
+            Stat::make('Baki Yuran Belum Bayar April 25', 'RM300')
+            ->extraAttributes([
                 // 'wire:click' => '$emit("filterUpdate", "is_admin")',
                //  'class' => 'cursor-pointer border-teal-400',
-             ]), 
+             ]),
 
-              
+
         ];
     }
 

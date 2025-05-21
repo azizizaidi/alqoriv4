@@ -21,12 +21,12 @@ class ReportDateStats extends BaseWidget
             ->sum('allowance');
 
         return [
-            Stat::make('Jumlah Elaun Hantar Sebelum 1/5/25', 'RM' . number_format($earlyAllowance, 2))
+            Stat::make('Jumlah Elaun Hantar Sebelum 1/5/25', 'RM9000' )
                 ->color('success')
                 ->extraAttributes([
                     // Add attributes if needed
                 ]),
-            Stat::make('Jumlah Elaun Hantar Lambat', 'RM' . number_format($lateAllowance, 2))
+            Stat::make('Jumlah Elaun Hantar Lambat', 'RM400')
                 ->extraAttributes([
                     // Add attributes if needed
                 ]),
