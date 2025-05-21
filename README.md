@@ -145,5 +145,5 @@ Backend Developer (Laravel Specialist)
 
 <div align="center">
   <img src="https://img.shields.io/badge/Built%20with-❤️-red.svg" alt="Built with love">
-  <p>© 2023 i-ALQORI. All Rights Reserved.</p>
+  <p>© 2021-2025 i-ALQORI. All Rights Reserved.</p>
 </div>
