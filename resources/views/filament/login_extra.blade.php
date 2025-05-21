@@ -2,17 +2,17 @@
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
         <div class="mb-3">
             <h3 class="font-bold text-lg mb-1">👑 Demo Admin</h3>
-            <p><span class="font-medium">ID:</span> <span class="font-mono">admin123</span> | <span class="font-medium">Password:</span> <span class="font-mono">admin123</span></p>
+            <p><span class="font-medium">ID:</span> <span class="font-mono">admin@123</span> | <span class="font-medium">Password:</span> <span class="font-mono">admin123</span></p>
         </div>
 
         <div class="mb-3">
             <h3 class="font-bold text-lg mb-1">👨‍🏫 Demo Guru</h3>
-            <p><span class="font-medium">ID:</span> <span class="font-mono">guru123</span> | <span class="font-medium">Password:</span> <span class="font-mono">guru123</span></p>
+            <p><span class="font-medium">ID:</span> <span class="font-mono">guru@123</span> | <span class="font-medium">Password:</span> <span class="font-mono">guru123</span></p>
         </div>
 
         <div>
             <h3 class="font-bold text-lg mb-1">👨‍🎓 Demo Pelajar</h3>
-            <p><span class="font-medium">ID:</span> <span class="font-mono">pelajar123</span> | <span class="font-medium">Password:</span> <span class="font-mono">pelajar123</span></p>
+            <p><span class="font-medium">ID:</span> <span class="font-mono">pelajar@123</span> | <span class="font-medium">Password:</span> <span class="font-mono">pelajar123</span></p>
         </div>
     </div>
 </div>
